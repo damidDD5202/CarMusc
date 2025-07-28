@@ -1,2 +1,10 @@
+@import url('../css/components/header.css');
 
 
+.half span{
+    transition: width 0.5s ease;
+}
+
+.half:hover span{
+    width: 100%;
+}
