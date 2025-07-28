@@ -1,0 +1,169 @@
+@font-face {
+  font-family: 'GroteskBold';
+  src: 
+    url('./bold/reformagroteskbold.woff2') format('woff2'),
+    url('./bold/reformagroteskbold.woff') format('woff'),
+    url('./bold/reformagroteskbold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GroteskMedium';
+  src: 
+    url('./medium/reformagroteskmedium.woff2') format('woff2'),
+    url('./medium/reformagroteskmedium.woff') format('woff'),
+    url('./medium/reformagroteskmedium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'GroteskDemi';
+  src: 
+    url('./demi/reformagroteskdemi.woff2') format('woff2'),
+    url('./demi/reformagroteskdemi.woff') format('woff'),
+    url('./demi/reformagroteskdemi.ttf') format('truetype');
+}
+
+
+/*---   bold    ---*/
+
+.text-bold-150{
+    font-family: 'GroteskDemi', sans;
+    font-size: 9.375em;
+    text-decoration: none;
+}
+
+
+
+/*---   medium    ---*/
+
+.text-medium-36{
+    font-family: 'GroteskDemi', sans;
+    font-size: 2.25em;
+    text-decoration: none;
+}
+
+.text-medium-30-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.875em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-medium-30{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.875em;
+    text-decoration: none;
+}
+
+.text-medium-20{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.25em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+
+/*---   demi    ---*/
+
+.text-demi-52-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 3.25em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s50-h70-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.875em;
+    line-height: 4.375em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-32-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 2em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-30-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.875em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s24-h30-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.5em;
+    line-height: 1.875em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-24-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.5em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-22-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.375em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s20-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.25em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s20-h30-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.25em;
+    line-height: 1.875em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s18-h25-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1.125em;
+    line-height: 1.5625em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s16-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s16-h24-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1em;
+    line-height: 1.5em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s14-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 0.875em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
+
+.text-demi-s14-h20-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 0.875em;
+    line-height: 1.25em;
+    text-decoration: none;
+    letter-spacing: 0.09375em; /*5%*/
+}
