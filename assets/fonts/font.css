@@ -30,18 +30,27 @@
 .text-bold-150{
     font-family: 'GroteskBold', sans;
     font-size: 9.375em;
+    line-height: 1;
     text-decoration: none;
     color: var(--text-color, #fff); 
     margin: 0;
 }
 
-
+.text-bold-80{
+    font-family: 'GroteskBold', sans;
+    font-size: 5em;
+    line-height: 1;
+    text-decoration: none;
+    color: var(--text-color, #fff); 
+    margin: 0;
+}
 
 /*---   medium    ---*/
 
 .text-medium-36{
     font-family: 'GroteskMedium', sans;
     font-size: 2.25em;
+    line-height: 1;
     text-decoration: none;
     color: var(--text-color, #fff);  
     margin: 0;
@@ -50,6 +59,7 @@
 .text-medium-30-l5{
     font-family: 'GroteskMedium', sans;
     font-size: 1.875em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -59,6 +69,7 @@
 .text-medium-30{
     font-family: 'GroteskMedium', sans;
     font-size: 1.875em;
+    line-height: 1;
     text-decoration: none;
     color: var(--text-color, #fff); 
     margin: 0;
@@ -67,6 +78,7 @@
 .text-medium-20{
     font-family: 'GroteskMedium', sans;
     font-size: 1.25em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -79,6 +91,7 @@
 .text-demi-52-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 3.25em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -88,6 +101,7 @@
 .text-demi-s50-h70-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.875em;
+
     line-height: 4.375em;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
@@ -98,6 +112,7 @@
 .text-demi-32-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 2em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -107,6 +122,7 @@
 .text-demi-30-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.875em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -116,6 +132,7 @@
 .text-demi-s24-h30-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.5em;
+
     line-height: 1.875em;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
@@ -126,6 +143,7 @@
 .text-demi-24-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.5em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -135,6 +153,7 @@
 .text-demi-22-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.375em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -144,6 +163,7 @@
 .text-demi-s20-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.25em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -153,6 +173,7 @@
 .text-demi-s20-h30-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.25em;
+
     line-height: 1.875em;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
@@ -163,6 +184,7 @@
 .text-demi-s18-h25-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1.125em;
+
     line-height: 1.5625em;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
@@ -173,6 +195,7 @@
 .text-demi-s16-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -182,6 +205,7 @@
 .text-demi-s16-h24-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1em;
+
     line-height: 1.5em;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
@@ -192,6 +216,7 @@
 .text-demi-s14-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 0.875em;
+    line-height: 1;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
     color: var(--text-color, #fff); 
@@ -201,6 +226,7 @@
 .text-demi-s14-h20-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 0.875em;
+    
     line-height: 1.25em;
     text-decoration: none;
     letter-spacing: 0.09375em; /*5%*/
