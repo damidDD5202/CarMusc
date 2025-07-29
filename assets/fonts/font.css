@@ -61,7 +61,7 @@
     font-size: 1.875em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -80,7 +80,7 @@
     font-size: 1.25em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -93,18 +93,27 @@
     font-size: 3.25em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
 
 .text-demi-s50-h70-l5{
     font-family: 'GroteskDemi', sans;
-    font-size: 1.875em;
-
-    line-height: 4.375em;
+    font-size: 3.125em;
+    line-height: 1.4;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
+    color: var(--text-color, #fff); 
+    margin: 0;
+}
+
+.text-demi-s46-h50-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 2,875em;
+    line-height: calc(50/46);
+    text-decoration: none;
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -114,7 +123,7 @@
     font-size: 2em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -124,7 +133,7 @@
     font-size: 1.875em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -135,7 +144,7 @@
 
     line-height: 1.875em;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -145,7 +154,7 @@
     font-size: 1.5em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -155,7 +164,7 @@
     font-size: 1.375em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -165,7 +174,7 @@
     font-size: 1.25em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -176,7 +185,7 @@
 
     line-height: 1.875em;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -187,7 +196,7 @@
 
     line-height: 1.5625em;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -197,7 +206,7 @@
     font-size: 1em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -205,10 +214,9 @@
 .text-demi-s16-h24-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1em;
-
-    line-height: 1.5em;
+    line-height: 1.5;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -218,7 +226,7 @@
     font-size: 0.875em;
     line-height: 1;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
@@ -229,7 +237,7 @@
     
     line-height: 1.25em;
     text-decoration: none;
-    letter-spacing: 0.09375em; /*5%*/
+    letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
     margin: 0;
 }
