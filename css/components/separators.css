@@ -1,0 +1,15 @@
+.separators{
+    display: flex;
+    height: 15px;
+    gap: 35px;
+    width: fit-content;
+    border-color: blue;
+}
+
+.separators .separator{
+    background-color: var(--help);
+    display: flex;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+}

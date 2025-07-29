@@ -1,0 +1,19 @@
+div .paggination{
+    display: flex;
+    gap: 15px;
+    height: 15px;
+    order: 4;
+}
+
+div .paggination-item{
+    height: 8px;
+    width: 8px;
+    background-color: transparent;
+    border: 1px solid var(--help-white);
+    border-radius: 50%;
+    transition: background-color 0.5s ease; 
+}
+
+.paggination-item.active{
+    background-color: var(--help-white);
+}
