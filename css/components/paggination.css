@@ -1,5 +1,5 @@
 .paggination{
-    display: flex;
+    display: none;
     gap: 15px;
     height: 15px;
     order: 4;
@@ -18,3 +18,8 @@
     background-color: var(--help-white);
 }
 
+@media(max-width: 782px){
+    .paggination{
+        display: flex;
+    }
+}

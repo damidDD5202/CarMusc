@@ -128,15 +128,23 @@ function moveSelectButton(){
     filterBackground.style.left = `${newPositionLeft}px`;
     filterBackground.style.top = `${newPositionTop}px`;
     filterBackground.style.width = `${newWidth}px`;
+
+    if(window.innerWidth < 783) addPaggination()
 }
 
 
 document.addEventListener('DOMContentLoaded', function () {
     setCountCardBox();
 
+    if(window.innerWidth < 783) addPaggination();
+    
+
     window.addEventListener('resize',  function(){
         moveSelectButton();
         setCountCardBox();
+
+        if(window.innerWidth < 783) addPaggination();
+    
     });
 });
 
@@ -183,6 +191,17 @@ function createCard(service){
     description.textContent = service.description;
 
     const button = document.createElement('a');
+    button.href = '';
+    button.className = 'half';
+
+    const textButton = document.createElement('p');
+    textButton.className = 'text-demi-s18-h25-l5';
+    textButton.textContent = 'More detailed';
+
+    const buttonBackground = document.createElement('span');
+
+    button.appendChild(textButton);
+    button.appendChild(buttonBackground);
 
     container.appendChild(image);
     container.appendChild(name);
@@ -190,6 +209,46 @@ function createCard(service){
     container.appendChild(button);
 
     return container;
+}
+
+
+// --- paggination ---
+
+
+function addPaggination(){  
+    const paggination = servicesBox.getElementsByClassName('paggination')[0];
+    paggination.innerHTML = '';
+
+    for(let i = 0; i < services[select].length; i++){
+        let pagItem = document.createElement('div');
+        pagItem.className = 'paggination-item';
+        pagItem.addEventListener('click', setActive)
+        paggination.appendChild(pagItem);
+    }
+
+    if (paggination.firstChild) {
+        paggination.firstChild.classList.add('active');
+    }
+}
+
+function setActive(event){
+    const pagItems = servicesBox.getElementsByClassName('paggination-item');
+
+    for (let item of pagItems) {
+        item.classList.remove('active');
+    }
+
+    event.currentTarget.classList.add('active');
+
+    const index = Array.from(pagItems).indexOf(event.currentTarget);
+
+    addOneCard(index);
+}
+
+function addOneCard(index){
+    serviceContainer.innerHTML = '';
+
+    serviceContainer.appendChild(cards[select][index]);
 }
 
 addOrShowCards();

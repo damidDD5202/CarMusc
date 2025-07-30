@@ -241,6 +241,7 @@ header{
     align-items: center;
     box-sizing: border-box;
     padding: 70px 100px;
+    padding-top: 68px;
     gap: 70px;
     width: 100%;
 }
@@ -299,10 +300,6 @@ header{
 }
 
 @media(max-width: 782px){
-    .slider{
-        display: none;
-    }
-
     .gallery{
         flex-direction: column;
     }
@@ -369,6 +366,12 @@ header{
     align-items: center;
     justify-content: center;
     z-index: 10;
+    transition: all 0.3s ease-out;
+}
+
+.services-filter >button:hover{
+    background-color: var(--help-20);
+    opacity: 0.9;
 }
 
 .services-filter .filter-background{
@@ -387,6 +390,7 @@ header{
     gap: 50px;
     width: 100%;
     align-items: center;
+    justify-content: center;
 }
 
 .services-container{
@@ -428,6 +432,36 @@ header{
     text-align: center;
 }
 
+.sbc-container >a{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: auto;
+}
+
+.sbc-container >a >p{
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.sbc-container >a >span{
+    position: absolute;
+    background-color: var(--help);
+    height: 100%;
+    width: 51%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+@media(max-width: 782px){
+    .services-box{
+        flex-direction: column;
+    }
+}
 
 @media(max-width: 442px){
     .services-filter{

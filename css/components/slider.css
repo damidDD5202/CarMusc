@@ -34,3 +34,9 @@
 .slider.right{
     transform: rotate(225deg);
 }
+
+@media(max-width: 782px){
+    .slider{
+        display: none;
+    }
+}

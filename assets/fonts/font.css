@@ -213,7 +213,7 @@
 .text-demi-s16-h24-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1em;
-    line-height: 1.5;
+    line-height: 140%;
     text-decoration: none;
     letter-spacing: 0.05em; /*5%*/
     color: var(--text-color, #fff); 
