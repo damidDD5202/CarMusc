@@ -1,11 +1,11 @@
-div .paggination{
+.paggination{
     display: flex;
     gap: 15px;
     height: 15px;
     order: 4;
 }
 
-div .paggination-item{
+.paggination-item{
     height: 8px;
     width: 8px;
     background-color: transparent;

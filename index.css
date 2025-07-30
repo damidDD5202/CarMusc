@@ -227,9 +227,101 @@ header{
 }
 
 
-/*---   section     steps   ---*/
+/*---   section     gallery   ---*/
 
 
 .gallery{
-    
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 70px 100px;
+    gap: 70px;
+    width: 100%;
+}
+
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.gallery-container >div{
+    width: 400px;
+    height: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-container-card{
+    position: relative;
+}
+
+.gallery-container-card >img{
+    height: 350px;
+    width: 400px;
+    user-select: none;
+}
+
+.gallery-container-card .bcground{
+    width: 366px;
+    height: 70px;
+    background-color: var(--help);
+    position: absolute;
+    top: 315px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.gallery-container-card >p{
+    text-align: center;
+    position: absolute;
+    top: 345px;
+    width: 366px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    max-width: 286px;
+}
+
+@media(max-width: 939px){
+    .gallery{
+        padding: 70px 50px;
+    }
+}
+
+@media(max-width: 782px){
+    .slider{
+        display: none;
+    }
+
+    .gallery{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 499px){
+    .gallery-container >div{
+        width: 290px;
+        height: 322px;
+    }
+
+    .gallery-container-card >img{
+        height: 250px;
+        width: 290px;
+    }
+
+    .gallery-container-card .bcground{
+        width: 256px;
+        height: 70px;
+        top: 215px;
+    }
+
+    .gallery-container-card >p{
+        top: 245px;
+        width: 226px;
+        max-width: 226px;
+    }
 }

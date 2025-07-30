@@ -1,0 +1,36 @@
+.slider{
+    min-height: 50px;
+    min-width: 50px;
+    max-width: 50px;
+    display: flex;
+    align-items: center;
+    border: 3px solid var(--help);
+    box-sizing: border-box;
+    background-color: transparent;
+    transition: background-color 0.3s ease-out;
+    cursor: pointer;
+    user-select: none;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.slider:hover{
+
+    background-color: var(--text-background-20);
+}
+
+.slider >img{
+    height: 31px;
+    width: 15px;
+    margin-left: 12px;
+    margin-top: 5px;
+    transform: rotate(-45deg);
+}
+
+.slider.left{
+    transform: rotate(45deg);
+}
+
+.slider.right{
+    transform: rotate(225deg);
+}

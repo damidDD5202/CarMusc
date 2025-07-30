@@ -75,7 +75,8 @@ function addSteps(){
 }
 
 function setActive(event) {
-    const pagItems = document.getElementsByClassName('paggination-item');
+    const boxSteps = document.getElementsByClassName('steps-box')[0];
+    const pagItems = boxSteps.getElementsByClassName('paggination-item');
 
     for (let item of pagItems) {
         item.classList.remove('active');

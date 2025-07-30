@@ -1,6 +1,7 @@
 @import url('../css/components/header.css');
 @import url('../css/components/separators.css');
 @import url('../css/components/paggination.css');
+@import url('../css/components/slider.css');
 
 .half span{
     transition: width 0.5s ease;
