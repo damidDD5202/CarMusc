@@ -132,7 +132,7 @@ function adjustLayout() {
         addCards(false);
         addPaggination();        
     } else {
-        addCards(true);
+        addCards(window.innerWidth > 1269 ? true : false);
     }
 }
 

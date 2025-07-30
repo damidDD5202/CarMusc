@@ -72,19 +72,45 @@ const services = {
     ]
 }
 
+const cards = {
+    pasting: [],
+    detailing: []
+}
+
+const servicesBox = document.getElementsByClassName('services-box')[0];
+const serviceContainer = document.getElementsByClassName('services-container')[0];
+
 const buttons = document.querySelectorAll('.services-filter button');
 const filterBackground = document.querySelector('.filter-background');
 
+const slide = servicesBox.getElementsByClassName('slider');
+
 let select = 'pasting';
+let countCard = 3;
+
+slide[0].addEventListener('click', setLeft);
+slide[1].addEventListener('click', setRight);
 
 buttons.forEach(button => {
     button.addEventListener('click', () => {
         select = button.getAttribute('data-target');
 
         moveSelectButton();
-        addCards();
+        addOrShowCards();
     });
 });
+
+function setLeft(){
+    const last = cards[select].pop();
+    cards[select].unshift(last);
+    addOrShowCards();
+}
+
+function setRight(){
+    const first = cards[select].shift();
+    cards[select].push(first);
+    addOrShowCards();
+}
 
 function moveSelectButton(){
     let newPositionLeft = 0;
@@ -104,18 +130,30 @@ function moveSelectButton(){
     filterBackground.style.width = `${newWidth}px`;
 }
 
-window.addEventListener('resize',  moveSelectButton);
+
+document.addEventListener('DOMContentLoaded', function () {
+    setCountCardBox();
+
+    window.addEventListener('resize',  function(){
+        moveSelectButton();
+        setCountCardBox();
+    });
+});
+
+
+function setCountCardBox(){
+    const size = window.innerWidth;
+
+    countCard = size > 1401 ? 3 : size > 1029 ? 2 : 1;
+
+    addOrShowCards();
+}
+
 
 // --- card ---
 
-const serviceContainer = document.getElementsByClassName('services-container')[0];
 
-const cards = {
-    pasting: [],
-    detailing: []
-}
-
-function addCards(){
+function addOrShowCards(){
     serviceContainer.innerHTML = '';
 
     if(cards[select].length < services[select].length){
@@ -124,11 +162,7 @@ function addCards(){
         }
     }
 
-    // for(let i = 0; i < cards[select].length; i++){
-    //     serviceContainer.appendChild(cards[select][i]);
-    // }
-
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < countCard; i++){
         serviceContainer.appendChild(cards[select][i]);
     }
 }
@@ -158,4 +192,4 @@ function createCard(service){
     return container;
 }
 
-addCards();
+addOrShowCards();
