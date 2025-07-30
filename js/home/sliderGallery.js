@@ -84,7 +84,7 @@ function addCards(value){
 function addOneCard(index){
     const box = document.getElementsByClassName('gallery-container')[0];
     box.innerHTML = '';
-                    
+    
     box.appendChild(cards[index]);
 }
 

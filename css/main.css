@@ -14,3 +14,8 @@ a{
     cursor: pointer;
 }
 
+button{
+    all: unset;
+    cursor: pointer;
+}
+
