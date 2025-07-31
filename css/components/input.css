@@ -1,0 +1,8 @@
+input{
+    all: unset;
+    background-color: red
+}
+
+input:focus{
+    background-color: blue;
+}

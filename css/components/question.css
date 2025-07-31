@@ -1,0 +1,16 @@
+.question{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 70px 100px;
+}
+
+.question-box{
+    
+}
+
+.question-box >div{
+    display: flex;
+    flex-wrap: wrap;
+}
+

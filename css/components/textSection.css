@@ -4,3 +4,8 @@
     gap: 30px;
     align-items: center;
 }
+
+.text-section >p:nth-of-type(1){
+    text-transform: uppercase;
+    text-align: center;
+}

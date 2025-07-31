@@ -295,7 +295,7 @@ header{
 
 @media(max-width: 939px){
     .gallery{
-        padding: 70px 50px;
+        padding: 50px;
     }
 }
 
@@ -342,11 +342,6 @@ header{
     align-items: center;
     overflow-x: hidden;
     box-sizing: border-box;
-}
-
-.services-text >p{
-    text-transform: uppercase;
-    text-align: center;
 }
 
 .services-filter{
@@ -457,9 +452,25 @@ header{
     z-index: 5;
 }
 
+@media(max-width: 939px){
+    .services{
+        padding: 50px;
+    }
+}
+
 @media(max-width: 782px){
     .services-box{
         flex-direction: column;
+    }
+}
+
+@media(max-width: 509px){
+    .services{
+        padding: 70px 15px;
+    }
+
+    .sbc-container{
+        padding: 70px 20px 50px 20px; 
     }
 }
 
@@ -473,3 +484,5 @@ header{
         left: 10px;
     }
 }
+
+

@@ -14,7 +14,7 @@ nav{
     gap: 30px;
 }
 
-nav a:nth-of-type(1){
+nav a:nth-of-type(1), .nav >a:nth-of-type(1){
     all: unset;
     margin-right: 40px;
     min-height: 50px;
@@ -26,13 +26,13 @@ nav a:nth-of-type(1){
     cursor: pointer;
 }
 
-nav a:nth-of-type(1) p{
+nav a:nth-of-type(1) p, .nav >a:nth-of-type(1) p{
     z-index: 1;
     padding-right: 17px;
     line-height: 30px;
 }
 
-nav a:nth-of-type(1) span{
+nav a:nth-of-type(1) span, .nav >a:nth-of-type(1) >span{
     display: flex;
     position: absolute;
     height: 100%;

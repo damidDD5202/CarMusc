@@ -1,8 +1,11 @@
 @import url('../css/components/header.css');
+@import url('../css/components/footer.css');
 @import url('../css/components/separators.css');
 @import url('../css/components/paggination.css');
 @import url('../css/components/slider.css');
 @import url('../css/components/textSection.css');
+@import url('../css/components/gridWork.css');
+@import url('../css/components/input.css');
 
 .half span{
     transition: width 0.5s ease;
@@ -11,4 +14,3 @@
 .half:hover span{
     width: 100%;
 }
-
