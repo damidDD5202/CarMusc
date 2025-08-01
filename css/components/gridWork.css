@@ -25,7 +25,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .our-work-box img:nth-of-type(6), img:nth-of-type(8){
+    .our-work-box img:nth-of-type(6), .our-work-box img:nth-of-type(8){
         display: none;
     }
 }
@@ -39,7 +39,7 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .our-work-box img:nth-of-type(5), img:nth-of-type(7){
+    .our-work-box img:nth-of-type(5), .our-work-box img:nth-of-type(7){
         display: none;
     }
 }
@@ -49,7 +49,7 @@
         grid-template-columns: 1fr;
     }
 
-    .our-work-box img:nth-of-type(3), img:nth-of-type(4){
+    .our-work-box img:nth-of-type(3), .our-work-box img:nth-of-type(4){
         display: none;
     }
 }

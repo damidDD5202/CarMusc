@@ -20,3 +20,11 @@ button{
     cursor: pointer;
 }
 
+img{
+    user-select: none;
+    pointer-events: none;
+}
+
+/* section{
+    padding
+} */
