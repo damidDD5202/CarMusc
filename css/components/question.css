@@ -91,3 +91,32 @@
     align-items: center;
     gap: 10px;
 }
+
+@media(max-width: 939px){
+    .question{
+        padding: 50px;
+    }
+}
+
+@media(max-width: 709px){
+    .question-box >div{
+        max-width: 290px;
+    }
+
+    .question-social{
+        flex-direction: row;
+        order: 1;
+        margin-left: auto;
+    }
+
+    .question-contact{
+        order: 3;
+        justify-content: flex-start;
+    }
+}
+
+@media(max-width: 509px){
+    .question{
+        padding: 50px 15px;
+    }
+}

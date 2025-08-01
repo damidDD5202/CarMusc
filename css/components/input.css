@@ -46,7 +46,7 @@ input.error{
     background-color: var(--help-20);
 }
 
-textarea.question-box-message{
+.question-box-message{
     max-width: 520px;
     min-width: 290px;
     width: 100%;
@@ -65,4 +65,10 @@ textarea.question-box-message::placeholder{
 
 .question-box >div >textarea::placeholder, .question-box >div >input::placeholder{
     text-transform: uppercase;
+}
+
+@media(max-width: 709px){
+    textarea.question-box-message{
+        max-width: 290px;
+    }
 }
