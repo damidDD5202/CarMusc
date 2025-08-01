@@ -6,11 +6,88 @@
 }
 
 .question-box{
-    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    align-items: center;
 }
 
 .question-box >div{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 610px;
 }
 
+.question-box >div:nth-of-type(1){
+    gap: 30px;
+}
+
+.question-box >div:nth-of-type(2){
+    gap: 30px 50px;
+}
+
+.question-social{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.question-social .icon-container{
+    box-sizing: border-box;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--help-white);
+    transition: all 0.3s ease-out;
+}
+
+.question-social .icon-container:hover{
+    background-color: var(--text-background-20);
+}
+
+.icon-container >img{
+    height: 20px;
+    width: 20px;
+}
+
+.question-box >div >button{
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.question-box >div >button >p{
+    z-index: 10;
+}
+
+.question-box >div >button >span{
+    width: 55%;
+    background-color: var(--help);
+    position: absolute;
+    display: flex;
+    height: 100%;
+    z-index: 5;
+    left: 0;
+}
+
+.question-contact{
+    display: flex;
+    flex-wrap: wrap;
+    width: 345px;
+    justify-content: flex-end;
+    gap: 15px 30px;
+    margin-left: auto;
+}
+
+.question-contact >span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

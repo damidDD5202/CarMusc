@@ -1,8 +1,68 @@
-input{
+input, textarea{
     all: unset;
-    background-color: red
+    max-width: 290px;
+    height: 46px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 30px;
+    border: 1px solid var(--background-60);
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+
+    font-family: 'GroteskDemi', sans;
+    font-size: 1em;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.05em; 
+    color: var(--text-color-60); 
+    margin: 0;
+    display: flex;
 }
 
-input:focus{
-    background-color: blue;
+input::placeholder, textarea::placeholder{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1em;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.05em; 
+    color: var(--text-color-60); 
+    margin: 0;
+}
+
+input:hover, textarea:hover{
+    background-color: var(--text-background-20);
+}
+
+input:focus, textarea:focus{
+    color: var(--text-background);
+    border: 1px solid var(--help);
+}
+
+input:focus::placeholder, textarea:focus::placeholder{
+    color: var(--text-color); 
+}
+
+input.error{
+    background-color: var(--help-20);
+}
+
+textarea.question-box-message{
+    max-width: 520px;
+    min-width: 290px;
+    width: 100%;
+    height: 150px;
+    justify-content: start;
+    resize: none;
+    white-space: pre-wrap;
+    text-align: justify
+}
+
+
+textarea.question-box-message::placeholder{
+    text-align: left;
+    align-items: start;
+}
+
+.question-box >div >textarea::placeholder, .question-box >div >input::placeholder{
+    text-transform: uppercase;
 }

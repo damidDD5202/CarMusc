@@ -6,6 +6,7 @@
 @import url('../css/components/textSection.css');
 @import url('../css/components/gridWork.css');
 @import url('../css/components/input.css');
+@import url('../css/components/question.css');
 
 .half span{
     transition: width 0.5s ease;
