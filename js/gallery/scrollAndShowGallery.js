@@ -21,7 +21,6 @@ const images = {
 const lineGallery = gallery.getElementsByTagName('div');
 
 function showGallery(){
-    console.log('sdfsdf')
     for(let i = 0; i < 2; i++){
         for(let j = 0; j < images[i].length; j++){
             let image = document.createElement('img');

@@ -1,3 +1,7 @@
+
+/* ---  gallery    --- */
+
+
 .gallery{
     box-sizing: border-box;
     padding: 70px 0;
@@ -38,8 +42,27 @@
 
 @media(max-width: 939px){
     .gallery{
+        padding: 50px 0;
         border-right: 50px solid var(--background);
         border-left: 50px solid var(--background);
+        gap: 15px;
+    }
+
+    .gallery >div{
+        height: 250px;
+        gap: 15px;
+    }
+
+    .gallery >div:nth-of-type(1) >img:nth-of-type(odd),
+    .gallery >div:nth-of-type(2) >img:nth-of-type(even){
+        height: 250px;
+        width: 610px;
+    }
+
+    .gallery >div:nth-of-type(1) >img:nth-of-type(even),
+    .gallery >div:nth-of-type(2) >img:nth-of-type(odd){
+        height: 250px;
+        width: 300px;
     }
 }
 
@@ -48,5 +71,45 @@
         border-right: 15px solid var(--background);
         border-left: 15px solid var(--background);
     }
+
+    .gallery >div{
+        height: 150px;
+    }
+
+    .gallery >div:nth-of-type(1) >img:nth-of-type(odd),
+    .gallery >div:nth-of-type(2) >img:nth-of-type(even){
+        height: 150px;
+        width: 410px;
+    }
+
+    .gallery >div:nth-of-type(1) >img:nth-of-type(even),
+    .gallery >div:nth-of-type(2) >img:nth-of-type(odd){
+        height: 150px;
+        width: 200px;
+    }
 }
 
+
+/* ---  feedback    --- */
+
+.feedback{
+    box-sizing: border-box;
+    padding: 70px 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.feedback-box{
+    display: flex;
+    gap: 50px;
+}
+
+.feedback-container{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}

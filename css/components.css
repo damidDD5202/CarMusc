@@ -7,6 +7,7 @@
 @import url('../css/components/gridWork.css');
 @import url('../css/components/input.css');
 @import url('../css/components/question.css');
+@import url('../css/components/preloader.css');
 
 .half span{
     transition: width 0.5s ease;
