@@ -64,7 +64,7 @@ footer >div >a:nth-of-type(1):hover span{
 
 @media(max-width: 509px){
     footer{
-        padding: 70px 15px;
+        padding: 30px 15px;
     }
 
     footer .nav a:nth-of-type(1){
