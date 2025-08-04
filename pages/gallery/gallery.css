@@ -185,3 +185,19 @@
     font-size: 1em;
     line-height: 140%;
 }
+
+@media(max-width: 782px){
+    .feedback-box{
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 509px){
+    .feedback{
+        padding: 70px 15px;
+    }
+
+    .feedbak-card{
+        padding: 70px 15px 30px 15px;
+    }
+}
