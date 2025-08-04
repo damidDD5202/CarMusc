@@ -90,7 +90,10 @@
 }
 
 
+
 /* ---  feedback    --- */
+
+
 
 .feedback{
     box-sizing: border-box;
@@ -194,10 +197,150 @@
 
 @media(max-width: 509px){
     .feedback{
-        padding: 70px 15px;
+        padding: 50px 15px;
     }
 
     .feedbak-card{
         padding: 70px 15px 30px 15px;
     }
 }
+
+
+
+
+/* ---  request-service    --- */
+
+
+
+.request-service{
+    display: flex;
+    gap: 50px;
+    box-sizing: border-box;
+    padding: 50px 100px 70px 100px;
+}
+
+.request-service .request-service-text{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    max-width: 730px;
+}
+
+.request-service-text >p:nth-of-type(1){
+    text-transform: uppercase;
+}
+
+.request-service-text >p:nth-of-type(2){
+    max-width: 580px;
+    opacity: 0.8;
+}
+
+.request-service-box{
+    max-width: 560px;
+    width: 100%;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-sizing: border-box;
+}
+
+.request-service-box-service{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 30px;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.request-service-box-service >p{
+    margin-left: 30px;
+}
+
+.future-select{
+    height: 46px;
+    flex-grow: 1;
+    min-width: 290px;
+    border: 1px solid var(--help);
+}
+
+.request-service-box >textarea{
+    max-width: 560px;
+}
+
+.request-service-box-buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.request-service-social{
+    display: flex;
+    gap: 15px;
+}
+
+.request-service-box-buttons .question-social{
+    flex-direction: row;
+}
+
+@media(max-width: 1261px){
+    .request-service{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .request-service .request-service-text{
+        align-items: center;
+    }
+
+    .request-service-text >p{
+        text-align: center;
+    }
+}
+
+@media(max-width: 939px){
+    .request-service{
+        padding: 50px;
+    }
+}
+
+@media(max-width: 768px){
+    .request-service-text >p:nth-of-type(1){
+        font-size: 2.875em;
+        line-height: calc(50/46);
+    }
+}
+
+@media(max-width: 659px){
+    .request-service-box{
+        flex-direction: column;
+    }
+
+    .request-service-box >div:nth-of-type(1){
+        padding-bottom: 0px;
+    }
+}
+
+@media(max-width: 542px){
+    .request-service-box-service{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .future-select{
+        height: 46px;
+        flex-grow: 1;
+        min-width: 290px;
+        border: 1px solid var(--help);
+    }
+}
+
+@media(max-width: 509px){
+    .request-service{
+        padding: 50px 15px;
+    }
+}
+
+
