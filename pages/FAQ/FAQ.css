@@ -1,0 +1,146 @@
+.answer{
+    display: flex;
+    box-sizing: border-box;
+    padding: 70px 100px;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.answer-box{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    height: fit-content;
+}
+
+.answer-container{
+    min-height: 90px;
+    box-sizing: border-box;
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 1px solid var(--background-60);
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+
+.answer-container:hover{
+    background-color: var(--text-background-20);
+}
+
+.answer-container.active:hover{
+    background-color: var(--text-background-20);
+}
+
+.answer-container.active{
+    border: 1px solid var(--help-white);
+    background-color: var(--help-20);
+}
+
+.answer-container-text{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.answer-container-text >p:nth-of-type(1){
+    text-transform: uppercase;
+}
+
+.answer-container-text >img{
+    transform: rotate(-90deg);
+}
+
+.answer-container >p{
+    display: none;
+    color: var(--text-color-60);
+    text-transform: uppercase;
+    white-space: pre-line;
+    text-align: justify;
+}
+
+.answer-container.active >p{
+    display: flex;
+}
+
+.answer-container >button{
+    display: none !important;
+    all: unset;
+    min-height: 50px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 13px 25px;
+    position: relative;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.answer-container >button >p{
+    z-index: 10;
+}
+
+.answer-container >button >span{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 51%;
+    background-color: var(--help);
+    z-index: 5;
+    left: 0;
+    top: 0;
+}
+
+.answer-container.active >button{
+    display: flex !important;
+}
+
+
+.number-paggination{
+    height: 50px;
+    display: none;
+    gap: 15px;
+    justify-content: center;
+}
+
+.number-paggination-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    transform: rotate(45deg);
+    border: 3px solid var(--help);
+    transition: all 0.3s ease-out;
+    box-sizing: border-box;
+    margin: 7.5px;
+}
+
+.number-paggination-item >p{
+    transform: rotate(-45deg);
+}
+
+.number-paggination-item.active{
+    background-color: var( --text-background-20);
+}
+
+.number-paggination-item:hover{
+    background-color: var( --text-background-20);
+}
+
+
+@media(max-width: 939px){
+    .answer{
+        padding: 50px;
+    }
+}
+
+@media(max-width: 509px){
+    .answer{
+        padding: 50px 15px;
+    }
+}
+
