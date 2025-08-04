@@ -81,7 +81,7 @@
 .question-contact{
     display: flex;
     flex-wrap: wrap;
-    width: 345px;
+    width: 350px;
     justify-content: flex-end;
     gap: 15px 30px;
     margin-left: auto;
@@ -91,6 +91,10 @@
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.question-contact >span >p{
+    text-transform: uppercase;
 }
 
 @media(max-width: 939px){
