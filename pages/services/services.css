@@ -44,7 +44,7 @@
     z-index: 5;
 }
 
-
+/*--filters*/
 
 .filter-section{
     display: flex;
@@ -114,7 +114,89 @@
 }
 
 
+/*--service-box*/
 
+.services-box{
+    height: 430px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: blue;
+    overflow-y: auto;
+}
+
+.container-service{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 30px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px 50px 25px 50px;
+    transition: all 0.3s ease-out;
+}
+
+.container-service:hover{
+    background-color: var(--text-background-20);
+}
+
+.container-service.active{
+    background-color: var(--text-background-20);
+}
+
+.container-service >img{
+    height: 70px;
+    width: 70px;
+}
+
+.price{
+    text-transform: uppercase;
+    color: var(--text-color-60);
+    margin-left: auto;
+}
+
+.name-service{
+    text-transform: uppercase;
+}
+
+.description{
+    color: var(--text-color-60);
+    margin-left: 100px;
+    text-transform: uppercase;
+    display: none;
+    padding-right: 190px;
+}
+
+.container-service.active .description{
+    display: flex;
+}
+
+.container-service >button{
+    box-sizing: border-box;
+    padding: 13px 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.container-service >button >p{
+    z-index: 10;
+}
+
+.container-service >button >span{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: var(--help);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+
+
+/*600*/
 @media(max-width: 939px){
     .services{
         padding: 50px;
@@ -124,6 +206,40 @@
 @media(max-width: 782px){
     .services-box{
         flex-direction: column;
+    }
+}
+
+@media(max-width: 709px){
+    .container-service{
+        padding: 15px 30px 25px 30px;      
+        gap: 0 15px;  
+    }
+    
+    .container-service >img{
+        height: 50px;
+        width: 50px;
+    }
+
+    .price, .name-service{
+        font-size: 1.25em;
+    }
+
+    .price{
+        order: 4;
+        margin-top: 30px;
+    }
+
+    .container-service >button{
+        order: 5;
+        margin-top: 30px;
+    }
+
+    .description{
+        font-size: 0.75em;
+        line-height: calc(16px / 12px);
+        margin-left: 65px;
+        padding-right: 0px;
+        order: 3;
     }
 }
 
