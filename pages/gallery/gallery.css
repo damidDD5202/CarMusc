@@ -248,7 +248,7 @@
 
 .request-service-box-service{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 15px 30px;
     align-items: center;
     flex-grow: 1;
@@ -257,13 +257,7 @@
 .request-service-box-service >p{
     margin-left: 30px;
     text-transform: uppercase;
-}
-
-.future-select{
-    height: 46px;
-    flex-grow: 1;
-    min-width: 290px;
-    border: 1px solid var(--help);
+    white-space: nowrap; 
 }
 
 .request-service-box >textarea{
@@ -328,13 +322,6 @@
     .request-service-box-service{
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .future-select{
-        height: 46px;
-        flex-grow: 1;
-        min-width: 290px;
-        border: 1px solid var(--help);
     }
 }
 
