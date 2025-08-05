@@ -1,0 +1,10 @@
+@media(max-width: 469px){
+    .services-filter{
+        flex-direction: column;
+    }
+
+    .services-filter .filter-background{
+        top: 0;
+        left: 15px;
+    }
+}
