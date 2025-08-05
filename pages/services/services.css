@@ -134,6 +134,7 @@
     gap: 15px;
     overflow-y: auto;
     scrollbar-color: var(--help) transparent;
+    margin-top: 20px;
 }
 
 .no-services-message {
@@ -266,7 +267,7 @@
 
 @media(max-width: 509px){
     .services{
-        padding: 70px 15px;
+        padding: 50px 15px;
     }
 }
 

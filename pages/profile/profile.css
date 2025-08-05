@@ -1,3 +1,281 @@
+.personal{
+    box-sizing: border-box;
+    padding: 70px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.personal-box{
+    max-width: 1140px;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    box-sizing: border-box;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.personal-box:nth-of-type(1){
+    justify-content: space-between;
+    padding-bottom: 25px;
+}
+
+.personal-box:nth-of-type(2){
+    padding-bottom: 0;
+}
+
+/*  ---     boxs personal       ----*/
+
+.personal-container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+.personal-container-some{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.personal-container-text{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 140px;
+}
+
+.personal-container-text >p:nth-of-type(1), .personal-container-setting >p:nth-of-type(1){
+    color: var(--text-color-60)
+}
+
+.personal-container-setting{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 290px;
+    width: 100%;
+    transition: all 0.3s ease-out;
+}
+
+
+
+.personal-container >div:nth-of-type(1) >.personal-container-setting:nth-of-type(1){
+    position: relative;
+    z-index: 100;
+}
+
+.personal-container >div:nth-of-type(1) >.personal-container-setting:nth-of-type(2){
+    position: relative;
+    z-index: 90;
+}
+
+.personal-container >div:nth-of-type(1) >.personal-container-setting:nth-of-type(3){
+    position: relative;
+    z-index: 80;
+}
+
+
+
+.personal-container .personal-container-data{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    
+}
+
+.personal-container p{
+    text-transform: uppercase;
+}
+
+#everything{
+    max-width: 200px;
+}
+
+
+
+#information{
+    max-width: 350px;
+}
+
+#information .personal-container-some:nth-of-type(1){
+    max-width: 120px;
+}
+
+#information .personal-container-some:nth-of-type(2){
+    max-width: 180px;
+}
+
+
+
+#credentials{
+    max-width: 290px;    
+}
+
+.personal-password{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.personal-password >p{
+    color: var(--text-color-60);
+}
+
+
+
+#everything >div{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#everything >div >p{
+    color: var(--text-color-60)
+}
+
+#everything >div >button, .personal-password >button{
+    box-sizing: border-box;
+    padding: 13px 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+#everything >div >button >p, .personal-password >button >p{
+    z-index: 10;
+    text-transform: none;
+}
+
+#everything >div >button >span, .personal-password >button >span{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: var(--help);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    transition: width 0.5s ease;
+}
+
+.personal-password >button{
+    margin-top: 15px;
+}
+
+.personal-password >button >span{
+    width: 53%;
+}
+
+#everything >div >button:hover >span{
+    width: 100%;
+}
+
+
+#setting >div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+#setting >div:nth-of-type(2) >.personal-container-some{
+    width: 290px;
+}
+
+.personal-container-setting.no-active{
+    opacity: 0.4;
+}
+
+
+.settin-size{
+    display: flex;
+    gap: 10px;
+}
+
+
+/*---   checkbox    ---*/
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-checkbox input {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.custom-checkbox .checkmark {
+    width: 20px; 
+    height: 20px; 
+    background-color: var(--help-20);
+    border: 1px solid var(--background-60);
+    margin-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 4px; 
+    top: 4px; 
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--background-60);
+}
+
+/*----------*/
+
+
+/*---   checkbox size   ---*/
+
+
+.custom-checkbox-size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    height: 46px;
+    width: 46px;
+    border: 1px solid var(--help-white);
+    opacity: 0.6;
+    box-sizing: border-box;
+    transition: background-color 0.3s, border 0.3s, opacity 0.3s; /* Плавный переход */
+}
+
+.custom-checkbox-size input {
+    display: none; 
+}
+
+.custom-checkbox-size.checked {
+    background-color: var(--text-background-20); 
+    border: 1px solid var(--help);
+    opacity: 1;
+}
+
+
+/*----------*/
+
+@media(max-width: 939px){
+    .personal{
+        padding: 50px;
+    }
+}
+
+@media(max-width: 509px){
+    .personal{
+        padding: 50px 15px;
+    }
+}
+
+
+
+
+/*--------------------------services*/
 @media(max-width: 469px){
     .services-filter{
         flex-direction: column;

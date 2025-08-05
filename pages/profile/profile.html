@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="../services/services.css">
-    <title>FAQ</title>
+    <title>profile</title>
 </head>
 <body data-page="profile">
     <header>
@@ -28,7 +28,112 @@
     </header>
     <main>
         <section class="personal">
-            personal
+            <div class="personal-box">
+                <div id="information" class="personal-container">
+                    <p class="text-demi-30-l5">personal Information</p>
+                    <div class="personal-container-data"></div>
+                </div>
+                <div id="credentials" class="personal-container">
+                    <p class="text-demi-30-l5">account Credentials</p>
+                    <div class="personal-container-text"></div>
+                    <div class="personal-password">
+                        <p class="text-demi-s14-l5">change password</p>
+                        <input type="text" placeholder="old password">
+                        <input type="text" placeholder="new password">
+                        <button class="half">
+                            <p class="text-demi-24-l5">Change</p>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <div id="everything" class="personal-container">
+                    <p class="text-demi-30-l5">reset everything</p>
+                    <div>
+                        <p class="text-demi-s14-h20-l5">By clicking this button, you confirm that you want to reset all settings to their default values. This action is irreversible and will result in the removal of all your personalized settings.</p>
+                        <button class="half">
+                            <p class="text-demi-24-l5">Reset</p>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="personal-box">
+                <div id="setting" class="personal-container">
+                    <p class="text-demi-30-l5">setting</p>
+                    <div>
+                        <div class="personal-container-setting">
+                            <p class="text-demi-s14-l5">theme</p>
+                            <div class="select" id="theme">
+                                <p class="text-demi-s16-l5 option-select">theme</p>
+                                <img src="../../assets/icons/arrow.svg" alt="">
+                                <div class="select-option">
+                                    <p>1</p>
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personal-container-setting">
+                            <p class="text-demi-s14-l5">language</p>
+                            <div class="select" id="language">
+                                <p class="text-demi-s16-l5 option-select">language</p>
+                                <img src="../../assets/icons/arrow.svg" alt="">
+                                <div class="select-option">
+                                    <p>1</p>
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="personal-container-setting">
+                            <p class="text-demi-s14-l5">palette</p>
+                            <div class="select" id="palette">
+                                <p class="text-demi-s16-l5 option-select">palette</p>
+                                <img src="../../assets/icons/arrow.svg" alt="">
+                                <div class="select-option">
+                                    <p>1</p>
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="personal-container-some">
+                            <div class="personal-container-setting">
+                                <p class="text-demi-s14-l5">version</p>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" />
+                                    <span class="checkmark"></span>
+                                    <p class="text-demi-s16-l5">version for the visually impaired</p>
+                                </label>
+                            </div>
+                            <div class="personal-container-setting no-active">
+                                <p class="text-demi-s14-l5">image</p>
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" disabled />
+                                    <span class="checkmark"></span>
+                                    <p class="text-demi-s16-l5">disable images</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="personal-container-setting no-active">
+                            <p class="text-demi-s14-l5">font size</p>
+                            <div class="settin-size">
+                                <label class="custom-checkbox-size">
+                                    <input type="checkbox" disabled/>
+                                    <span class="checkmark text-demi-s16-l5">A</span>
+                                </label>
+                                <label class="custom-checkbox-size">
+                                    <input type="checkbox" disabled/>
+                                    <span class="checkmark text-demi-24-l5">A</span>
+                                </label>
+                                <label class="custom-checkbox-size">
+                                    <input type="checkbox" disabled/>
+                                    <span class="checkmark text-demi-32-l5">A</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="services">
             <div class="text-section">
