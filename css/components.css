@@ -8,6 +8,7 @@
 @import url('../css/components/input.css');
 @import url('../css/components/question.css');
 @import url('../css/components/preloader.css');
+@import url('../css/components/filter.css');
 
 .half span{
     transition: width 0.5s ease;
