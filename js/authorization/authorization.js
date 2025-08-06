@@ -36,7 +36,7 @@ authButton.addEventListener('click', function(){
             passwordBox.classList.add('error');
         }else{
             localStorage.setItem('user', JSON.stringify(foundUser));
-            window.location.href = '/pages/profile/profile.html'
+            window.location.href = '../../pages/profile/profile.html'
         }
     }
 

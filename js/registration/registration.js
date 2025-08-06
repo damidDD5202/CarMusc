@@ -143,7 +143,7 @@ regButton.addEventListener('click', async function(event){
 
             await addUser(userData);
 
-            window.location.href = '/pages/authorization/authorization.html';
+            window.location.href = '../../pages/authorization/authorization.html';
         } catch (error) {
             console.error('Ошибка при добавлении пользователя:', error);
         }
