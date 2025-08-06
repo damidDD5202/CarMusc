@@ -1,5 +1,8 @@
 import i18n from "../i18n.js";
 
+
+/* ------- change language ----------*/
+
 const language = document.querySelector('#language');
 if (language) {
     const selectLanguage = language.querySelector('.option-select');
@@ -39,3 +42,14 @@ if (language) {
         });
     });
 }
+
+
+
+/* ----------- reset ----------- */
+const reset = document.querySelector('#reset');
+
+reset.addEventListener('click', function(){
+    // добавить всплытие предупреждающего окна;
+    localStorage.clear();
+    location.reload();
+})
