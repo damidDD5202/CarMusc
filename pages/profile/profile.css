@@ -38,12 +38,14 @@
     flex-wrap: wrap;
     gap: 30px;
 }
+ 
+.personal-container-some
 
 .personal-container-text{
     display: flex;
     flex-direction: column;
     gap: 5px;
-    max-width: 140px;
+    width: 100%;
 }
 
 .personal-container-text >p:nth-of-type(1), .personal-container-setting >p:nth-of-type(1){

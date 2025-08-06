@@ -1,20 +1,40 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "login": "admin",
-            "password": "admin",
-            "role": "admin",
-            "name": "admin",
-            "surname": "adminov",
-            "patronymic": "adminovich",
-            "telephone": "+375 (33) 234-51-55",
-            "email": "admin@gmail.com",
-            "date of birth": "20.04.1999",
-            "services":{
-                "ordered": [],
-                "completed": []
-            }
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "login": "admin",
+      "password": "admin",
+      "role": "admin",
+      "name": "admin",
+      "surname": "adminov",
+      "patronymic": "adminovich",
+      "telephone": "+375 (33) 234-51-55",
+      "email": "admin@gmail.com",
+      "date of birth": "20.04.1999",
+      "services": {
+        "ordered": [],
+        "completed": []
+      }
+    },
+    {
+      "id": "2",
+      "name": "123",
+      "surname": "123",
+      "date of birth": "22.05.2003",
+      "service": {
+        "ordered": [],
+        "completed": []
+      }
+    },
+    {
+      "id": 3,
+      "name": "456",
+      "surname": "456",
+      "date of birth": "13.12.2005",
+      "service": {
+        "ordered": [],
+        "completed": []
+      }
+    }
+  ]
 }

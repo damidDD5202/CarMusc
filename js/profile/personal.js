@@ -1,24 +1,13 @@
 import i18n from "../i18n.js";
+import { updatePassword } from "../../server/api.js";
 
-const data = {
-    name: 'damid',
-    surname: 'damidov',
-    patronymic: 'damidovich',
-    'date of birth': '22.05.2003',
-    telephone: '+375 (29) 251-33-11',
-    email: 'damid@gmail.com',
-}
-
-const dataAuth = {
-    login: 'damid8822',
-    password: ''
-}
+const data = JSON.parse(localStorage.getItem('user'));
 
 const personal = document.querySelector('#information');
 const boxPersonal = personal.getElementsByClassName('personal-container-data')[0];
 
 function addDataPersonal(){
-    const keys = Object.keys(data);
+    const keys = ['name', 'surname', 'patronymic', 'date of birth', 'telephone', 'email'];
 
     const div1 = document.createElement('div');
     div1.className = 'personal-container-some';
@@ -68,7 +57,7 @@ function addDataCredentials(){
 
     let mainText = document.createElement('p');
     mainText.className = 'text-demi-s20-l5'
-    mainText.textContent = dataAuth[log];
+    mainText.textContent = data[log];
 
     textBox.appendChild(headerText);
     textBox.appendChild(mainText);
@@ -78,3 +67,34 @@ function addDataCredentials(){
 
 addDataPersonal();
 addDataCredentials();
+
+// ----- logic for change password ---- 
+
+const oldPassword = document.querySelector('#old');
+const newPassword = document.querySelector('#new');
+const changePassword = document.querySelector('#change');
+
+changePassword.addEventListener('click', async function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    
+    if (oldPassword.value !== data.password) {
+        console.log('Старый пароль не совпадает');
+        return;
+    }
+
+    if (newPassword.value.length < 6) {
+        console.log('Новый пароль слишком короткий');
+        return;
+    }
+
+    try {
+        await updatePassword(data.id, newPassword.value);
+        data.password = newPassword.value;
+        localStorage.setItem('user', JSON.stringify(data));
+        
+        console.log('Пароль изменён успешно');
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+});
