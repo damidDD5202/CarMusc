@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
-    <link rel="stylesheet" href="./registration.css">
+    <link rel="stylesheet" href="./authorization.css">
     <title data-i18n="title">Authorization</title>
 </head>
 <body data-page="authorization">
@@ -30,7 +30,26 @@
         </div>     
     </header>
     <main>
-        
+        <section class="authorization">
+            <div class="text-section">
+                <p class="text-demi-52-l5">authorization</p>
+                <div class="separators"></div>
+                <div class="input-container">
+                    <div class="form" id="login">
+                        <input type="text" placeholder="login">
+                        <p class="text-demi-s16-h20-l5">there is no such login</p>
+                    </div>
+                    <div class="form" id="password">
+                        <input type="text" placeholder="password">
+                        <p class="text-demi-s16-h20-l5">invalid password</p>
+                    </div>
+                    <button class="half" id="authorization">
+                        <p class="text-demi-24-l5">Authorization</p>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <p class="text-demi-s16-h24-l5" data-i18n-common="footer.root">2025 © Detailing Workshop. All rights reserved.</p>
@@ -45,7 +64,7 @@
             <a href="/pages/FAQ/FAQ.html" class="text-medium-30" data-i18n-common="footer.menu.FAQ">FAQ</a>
         </div>
     </footer>
-    <script type="module" src="../../js/registration/main.js"></script>
+    <script type="module" src="../../js/authorization/authorization.js"></script>
     <script type="module" src="../../js/main.js"></script>
 </body>
 </html>

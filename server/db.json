@@ -1,0 +1,20 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "login": "admin",
+            "password": "admin",
+            "role": "admin",
+            "name": "admin",
+            "surname": "adminov",
+            "patronymic": "adminovich",
+            "telephone": "+375 (33) 234-51-55",
+            "email": "admin@gmail.com",
+            "date of birth": "20.04.1999",
+            "services":{
+                "ordered": [],
+                "completed": []
+            }
+        }
+    ]
+}

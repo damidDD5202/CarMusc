@@ -1,6 +1,11 @@
-const dataUser = {};
+import { getUsers, addUser } from "../../server/api.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+const userData = {};
+let users;
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadUsers();
+
     inputHandler('name', (value) => (value.length < 2 || value.length > 20));
     inputHandler('surname', (value) => (value.length < 2 || value.length > 20));
     inputHandler('patronymic', (value) => value.length > 20);
@@ -11,15 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
     inputHandler('password', (value) => false);
     inputHandler('repeatThePassword', (value) => false);
 });
-    
+  
 function inputHandler(someName, funcError, customInput = null){
     const some = returnInputError(someName);
 
     some.input.addEventListener('input', () =>{
         if(!customInput){
-            dataUser[someName] = some.input.value.trim();
+            userData[someName] = some.input.value.trim();
             some.box.classList.remove('error');
-            console.log(dataUser)
         }else{
             customInput(some.input);
         }
@@ -45,7 +49,23 @@ function returnInputError(name) {
     return { box, input, error };
 }
 
+async function loadUsers() {
+    users = await getUsers();
+}
+
+async function maxIndex() {
+    const maxId = users.reduce((max, user) => {
+        return Math.max(max, parseInt(user.id));
+    }, 0);
+
+    return maxId;
+}
+
+
+
 // ----------- DATE OF BIRTH ----------------
+
+
 
 function formattedDateOfBirthError(value) {
     const regex = /^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/;
@@ -91,7 +111,7 @@ function formattedDateOfBirthInput(inputElement) {
     }
 
     inputElement.value = value;
-    dataUser['date of birth'] = value;
+    userData['date of birth'] = value;
 }
 
 // Функция для определения максимального числа дней в месяце
@@ -108,17 +128,25 @@ function getMaxDaysInMonth(month, year) {
 
 
 
+// ------------------ REGISTRATION ---------------------
 
-
-// --- registration ===
 
 const regButton = document.querySelector('#registration');
 
-regButton.addEventListener('click', function(){
+regButton.addEventListener('click', async function(event){
     if(!checkField()){
         console.log('есть ошибки и незаполненные поля'); // модальное окно
     }else{
-       
+        try {
+            userData.id = await maxIndex() + 1;
+            userData.service = {ordered: [], completed: []};
+
+            await addUser(userData);
+
+            window.location.href = '/pages/authorization/authorization.html';
+        } catch (error) {
+            console.error('Ошибка при добавлении пользователя:', error);
+        }
     }
 })
 
