@@ -1,6 +1,78 @@
 import i18n from "../i18n.js";
 
 
+/* ----------- reset ----------- */
+const reset = document.querySelector('#reset');
+
+reset.addEventListener('click', function(){
+    // добавить всплытие предупреждающего окна;
+    localStorage.clear();
+    location.reload();
+})
+
+
+
+/* ------- theme ----------*/
+// Функция для применения темы
+export function applyTheme(theme) {
+    // Сохраняем в localStorage
+    localStorage.setItem('theme', theme);
+    
+    // Применяем к документу
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Обновляем текст в переключателе
+    updateThemeText(theme);
+}
+
+// Функция для обновления текста переключателя
+function updateThemeText(theme) {
+    const lang = localStorage.getItem('language') || 'en';
+    const selectTheme = document.querySelector('#theme .option-select');
+    
+    if (selectTheme) {
+        selectTheme.textContent = getThemeDisplayName(theme, lang);
+        selectTheme.setAttribute('data-i18n', `theme.${theme}`);
+    }
+}
+
+// Функция для получения локализованного названия темы
+function getThemeDisplayName(theme, lang) {
+    const names = {
+        light: { en: 'Light', ru: 'Светлая' },
+        dark: { en: 'Dark', ru: 'Тёмная' }
+    };
+    return names[theme]?.[lang] || names[theme].en;
+}
+
+// Инициализация темы при загрузке
+export function initTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(currentTheme);
+}
+
+// Подключение обработчиков для переключателя
+export function setupThemeSwitcher() {
+    const theme = document.querySelector('#theme');
+    if (!theme) return;
+
+    const options = Array.from(theme.getElementsByClassName('option'));
+
+    options.forEach(option => {
+        option.addEventListener('click', function() {
+            const targetTheme = this.getAttribute('data-target');
+            applyTheme(targetTheme);
+        });
+    });
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    initTheme();
+    setupThemeSwitcher();
+});
+
+
 /* ------- change language ----------*/
 
 const language = document.querySelector('#language');
@@ -44,12 +116,3 @@ if (language) {
 }
 
 
-
-/* ----------- reset ----------- */
-const reset = document.querySelector('#reset');
-
-reset.addEventListener('click', function(){
-    // добавить всплытие предупреждающего окна;
-    localStorage.clear();
-    location.reload();
-})

@@ -209,7 +209,9 @@
                 "version": "version for the visually impaired",
                 "image": "disable images",
                 "english": "english",
-                "russian": "russian"
+                "russian": "russian",
+                "dark": "dark",
+                "light": "light"
             },
             "placeholder":{
                 "old": "old password",

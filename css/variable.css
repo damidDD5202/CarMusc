@@ -12,4 +12,25 @@
     --help: #BE2B31;
     --help-20:#be2b3033;
     --help-white: #FFFFFF;
+
+    --hedaer-index: #FFFFFF;
+    --hedaer-index: #FFFFFF;
+}
+
+[data-theme="light"] {
+    --font-size-base: 16px;
+
+    --background: #f2c2c2; 
+    --text-background: #141414; 
+    --background-80: #000000cc; 
+    --background-60: #00000099;; 
+    --text-background-20: #00000033; 
+    --text-color: #141414; 
+    --text-color-80: #000000cc; 
+    --text-color-60: #000000cc; 
+    --help: #BE2B31;
+    --help-20:#be2b3033;
+    --help-white: #141414;
+
+    --hedaer-index: #FFFFFF;
 }
