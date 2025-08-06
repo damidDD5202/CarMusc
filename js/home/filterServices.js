@@ -1,5 +1,7 @@
 import i18n from '../i18n.js';
 
+const lang = localStorage.getItem('language') || 'en';
+
 const images = {
     cleaning: './assets/icons/cleaning.svg',
     list: './assets/icons/list.svg',
@@ -114,26 +116,43 @@ function setRight(){
     addOrShowCards();
 }
 
+changePositionAndSize();
+
 function moveSelectButton(){
-    let newPositionLeft = 0;
-    let newPositionTop = 0;
-
-    let newWidth = select == 'pasting' ? 170 : 190;
-
-    if(window.innerWidth < 443){
-        newPositionLeft = select == 'pasting' ? 10 : 0;
-        newPositionTop = select == 'pasting' ? 0 : 87;
-    }else{
-        newPositionLeft = select == 'pasting' ? 0 : 220;
-    }
-
-    filterBackground.style.left = `${newPositionLeft}px`;
-    filterBackground.style.top = `${newPositionTop}px`;
-    filterBackground.style.width = `${newWidth}px`;
+    changePositionAndSize();
 
     if(window.innerWidth < 783) addPaggination()
 }
 
+function changePositionAndSize(){
+    let newPositionLeft = 0;
+    let newPositionTop = 0;
+    let newWidth = 0;
+    
+    if(lang == 'en'){
+        newWidth = select == 'pasting' ? 170 : 190;
+
+        if(window.innerWidth < 443){
+            newPositionLeft = select == 'pasting' ? 10 : 0;
+            newPositionTop = select == 'pasting' ? 0 : 87;
+        }else{
+            newPositionLeft = select == 'pasting' ? 0 : 220;
+        }
+    }else{
+        newWidth = select == 'pasting' ? 182 : 210;
+
+        if(window.innerWidth < 443){
+            newPositionLeft = select == 'pasting' ? 14 : 0;
+            newPositionTop = select == 'pasting' ? 0 : 87;
+        }else{
+            newPositionLeft = select == 'pasting' ? 0 : 232;
+        }
+    }
+    
+    filterBackground.style.left = `${newPositionLeft}px`;
+    filterBackground.style.top = `${newPositionTop}px`;
+    filterBackground.style.width = `${newWidth}px`;
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     setCountCardBox();

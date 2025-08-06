@@ -1,5 +1,7 @@
 import i18n from "../i18n.js";
 
+const lang = localStorage.getItem('language') || 'en';
+
 const images = {
     cleaning: '../../assets/icons/cleaning.svg',
     list: '../../assets/icons/list.svg',
@@ -106,24 +108,42 @@ buttons.forEach(button => {
     });
 });
 
+changePositionAndSize();
+
 function moveSelectButton(){
+    changePositionAndSize();
+    addOrShowCards();
+}
+
+function changePositionAndSize(){
     let newPositionLeft = 0;
     let newPositionTop = 0;
+    let newWidth = 0;
+    
+    if(lang == 'en'){
+        newWidth = select == 'ordered' ? 178 : 208;
 
-    let newWidth = select == 'ordered' ? 178 : 208;
-
-    if(window.innerWidth < 469){
-        newPositionLeft = select == 'ordered' ? 15 : 0;
-        newPositionTop = select == 'ordered' ? 0 : 87;
+        if(window.innerWidth < 469){
+            newPositionLeft = select == 'ordered' ? 15 : 0;
+            newPositionTop = select == 'ordered' ? 0 : 87;
+        }else{
+            newPositionLeft = select == 'ordered' ? 0 : 228;
+        }
     }else{
-        newPositionLeft = select == 'ordered' ? 0 : 228;
+        newWidth = select == 'ordered' ? 196 : 213;
+
+        if(window.innerWidth < 469){
+            newPositionLeft = select == 'ordered' ? 9 : 0;
+            newPositionTop = select == 'ordered' ? 0 : 87;
+        }else{
+            newPositionLeft = select == 'ordered' ? 0 : 246;
+        }
     }
+    
 
     filterBackground.style.left = `${newPositionLeft}px`;
     filterBackground.style.top = `${newPositionTop}px`;
     filterBackground.style.width = `${newWidth}px`;
-
-    addOrShowCards();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
