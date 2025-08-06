@@ -1,3 +1,5 @@
+import i18n from '../i18n.js';
+
 const gallery = [
     {
         image: './assets/images/gc1.svg',
@@ -9,11 +11,11 @@ const gallery = [
     },
     {
         image: './assets/images/gc3.svg',
-        text: 'This style not only attracts attention, but also emphasizes the owner\'s individualit.',
+        text: 'This style not only attracts attention, but also emphasizes the owner\'s individualit',
     },
     {
         image: './assets/images/gc4.svg',
-        text: 'high-quality paintwork and details give it an aggressive and dynamic appearance',
+        text: 'High-quality paintwork and details give it an aggressive and dynamic appearance',
     },
     {
         image: './assets/images/gc5.svg',
@@ -34,7 +36,7 @@ const slide = sectionGallery.getElementsByClassName('slider');
 slide[0].addEventListener('click', setLeft);
 slide[1].addEventListener('click', setRight);
 
-function createCard(content){
+function createCard(content, i){
     const card = document.createElement('div');
     card.className = 'gallery-container-card'
 
@@ -47,6 +49,7 @@ function createCard(content){
     const description = document.createElement('p');
     description.className = 'text-demi-s18-h25-l5';
     description.textContent = content.text;
+    description.setAttribute('data-i18n', `gallery.${i + 1}`);
 
     card.appendChild(img);
     card.appendChild(bc);
@@ -57,7 +60,7 @@ function createCard(content){
 
 function fillCards(){
     for(let i = 0; i < gallery.length; i++){
-        cards.push(createCard(gallery[i]));
+        cards.push(createCard(gallery[i], i));
     }
 }
 
@@ -79,6 +82,7 @@ function addCards(value){
 
     box.appendChild(cards[number[0]]);
     value && box.appendChild(cards[number[1]]);
+
 }
 
 function addOneCard(index){
@@ -134,6 +138,8 @@ function adjustLayout() {
     } else {
         addCards(window.innerWidth > 1269 ? true : false);
     }
+
+    i18n.translate();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

@@ -26,7 +26,7 @@ footer >div >a:nth-of-type(1):hover span{
     width: 100%;
 }
 
-@media(max-width: 1109px){
+@media(max-width: 1120px){
     footer{
         flex-direction: column;
         padding: 30px 50px;
@@ -62,7 +62,7 @@ footer >div >a:nth-of-type(1):hover span{
     }
 }
 
-@media(max-width: 509px){
+@media(max-width: 539px){
     footer{
         padding: 30px 15px;
     }

@@ -1,3 +1,5 @@
+import i18n from "../i18n.js";
+
 const images = {
     cleaning: '../../assets/icons/cleaning.svg',
     list: '../../assets/icons/list.svg',
@@ -139,7 +141,7 @@ let containerCard;
 let filterValue = { value: null };;
 let sortValue = { value: null };;
 
-function createCard(service){
+function createCard(service, i){
     const container = document.createElement('div');
     container.className = 'container-service';
 
@@ -148,7 +150,8 @@ function createCard(service){
 
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5 name-service';
-    name.textContent = service.name
+    name.textContent = service.name;
+    name.setAttribute('data-i18n', `services.${select == 'ordered' ? 'pasting' : 'detailing'}.${i}.name`);
 
     const price = document.createElement('p');
     price.className = 'text-demi-24-l5 price';
@@ -160,11 +163,13 @@ function createCard(service){
     const textButton = document.createElement('p');
     textButton.className = 'text-medium-30-l5';
     textButton.textContent = 'Refuse';
+    textButton.setAttribute('data-i18n-common', `services.textButtonRefuse`);
 
     const span = document.createElement('span');
     const description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5 description';
     description.textContent = service.description;
+    description.setAttribute('data-i18n-common', `services.${select == 'ordered' ? 'pasting' : 'detailing'}.${i}.description`);
 
     // append
 
@@ -201,7 +206,7 @@ function addOrShowCards() {
 
     if (cards[select].length === 0) {
         for (let i = 0; i < services[select].length; i++) {
-            cards[select].push(createCard(services[select][i]));
+            cards[select].push(createCard(services[select][i], i + 1));
         }
     }
 
@@ -245,6 +250,8 @@ function addOrShowCards() {
             servicesBox.appendChild(card);
         });
     }
+
+    i18n.translate();
 }
 
 // Функция для получения ключа по значению
@@ -320,4 +327,6 @@ function addOption(selectBox, option, value, defaultText){
 
         optionBox.appendChild(tempOption);
     }
+
+    i18n.translate();
 }

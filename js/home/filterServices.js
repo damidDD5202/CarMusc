@@ -1,3 +1,5 @@
+import i18n from '../i18n.js';
+
 const images = {
     cleaning: './assets/icons/cleaning.svg',
     list: './assets/icons/list.svg',
@@ -10,7 +12,7 @@ const services = {
         {
             image: images.washing,
             name: 'corrosion treatment',
-            description: 'we clean the surface, remove old coatings, and apply special anti-corrosion compounds',
+            description: 'We clean the surface, remove old coatings, and apply special anti-corrosion compounds',
         },
         {
             image: images.polishing,
@@ -42,7 +44,7 @@ const services = {
         {
             image: images.polishing,
             name: 'headlight polishing',
-            description: 'special formulations and tools to restore the headlights to their original appearance, improving visibility on the road',
+            description: 'Special formulations and tools to restore the headlights to their original appearance, improving visibility on the road',
         },
         {
             image: images.polishing,
@@ -144,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setCountCardBox();
 
         if(window.innerWidth < 783) addPaggination();
-    
+        
     });
 });
 
@@ -166,16 +168,18 @@ function addOrShowCards(){
 
     if(cards[select].length < services[select].length){
         for(let i = 0; i < services[select].length; i++){
-            cards[select].push(createCard(services[select][i]));
+            cards[select].push(createCard(services[select][i], i + 1));
         }
     }
 
     for(let i = 0; i < countCard; i++){
         serviceContainer.appendChild(cards[select][i]);
     }
+
+    i18n.translate();
 }
 
-function createCard(service){
+function createCard(service, i){
     const container = document.createElement('div');
     container.className = 'sbc-container';
 
@@ -185,10 +189,12 @@ function createCard(service){
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5';
     name.textContent = service.name;
+    name.setAttribute('data-i18n-common', `services.${select}.${i}.name`);
 
     const description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5'
     description.textContent = service.description;
+    description.setAttribute('data-i18n-common', `services.${select}.${i}.description`);
 
     const button = document.createElement('a');
     button.href = '';
@@ -197,6 +203,7 @@ function createCard(service){
     const textButton = document.createElement('p');
     textButton.className = 'text-demi-s18-h25-l5';
     textButton.textContent = 'More detailed';
+    textButton.setAttribute('data-i18n-common', 'services.textButton');
 
     const buttonBackground = document.createElement('span');
 
@@ -249,6 +256,8 @@ function addOneCard(index){
     serviceContainer.innerHTML = '';
 
     serviceContainer.appendChild(cards[select][index]);
+
+    i18n.translate();
 }
 
 addOrShowCards();

@@ -101,6 +101,7 @@
 
 .contact-item >p{
     text-align: center;
+    white-space: pre-line;
 }
 
 .contact-item >p:nth-of-type(1){

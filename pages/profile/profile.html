@@ -6,17 +6,17 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./profile.css">
     <link rel="stylesheet" href="../services/services.css">
-    <title>profile</title>
+    <title data-i18n="title">Profile</title>
 </head>
 <body data-page="profile">
     <div id="preloader">
         <div class="loader"></div>
-        <p class="text-demi-24-l5">Loading...</p>
+        <p class="text-demi-24-l5" data-i18n-common="preloader">Loading...</p>
     </div>
     <header>
         <nav>
-            <a href="/pages/services/services.html" class="half" data-i18n-common="header.a">
-                <p class="text-medium-30" >Our services</p>
+            <a href="/pages/services/services.html" class="half">
+                <p class="text-medium-30" data-i18n-common="header.menu.services">Our services</p>
                 <span></span>
             </a>
             <a href= "/index.html" class="text-medium-30" data-i18n-common="header.menu.home">Home</a>
@@ -34,28 +34,28 @@
         <section class="personal">
             <div class="personal-box">
                 <div id="information" class="personal-container">
-                    <p class="text-demi-30-l5">personal Information</p>
+                    <p class="text-demi-30-l5" data-i18n="personal.header.information">personal information</p>
                     <div class="personal-container-data"></div>
                 </div>
                 <div id="credentials" class="personal-container">
-                    <p class="text-demi-30-l5">account Credentials</p>
+                    <p class="text-demi-30-l5" data-i18n="personal.header.credentials">account credentials</p>
                     <div class="personal-container-text"></div>
                     <div class="personal-password">
-                        <p class="text-demi-s14-l5">change password</p>
-                        <input type="text" placeholder="old password">
-                        <input type="text" placeholder="new password">
+                        <p class="text-demi-s14-l5" data-i18n="personal.text.change">change password</p>
+                        <input type="text" placeholder="old password" data-i18n="personal.placeholder.old">
+                        <input type="text" placeholder="new password" data-i18n="personal.placeholder.new">
                         <button class="half">
-                            <p class="text-demi-24-l5">Change</p>
+                            <p class="text-demi-24-l5" data-i18n="personal.button.change">Change</p>
                             <span></span>
                         </button>
                     </div>
                 </div>
                 <div id="everything" class="personal-container">
-                    <p class="text-demi-30-l5">reset everything</p>
+                    <p class="text-demi-30-l5" data-i18n="personal.header.everything">reset everything</p>
                     <div>
-                        <p class="text-demi-s14-h20-l5">By clicking this button, you confirm that you want to reset all settings to their default values. This action is irreversible and will result in the removal of all your personalized settings.</p>
+                        <p class="text-demi-s14-h20-l5" data-i18n="personal.text.reset">By clicking this button, you confirm that you want to reset all settings to their default values. This action is irreversible and will result in the removal of all your personalized settings.</p>
                         <button class="half">
-                            <p class="text-demi-24-l5">Reset</p>
+                            <p class="text-demi-24-l5" data-i18n="personal.button.reset">Reset</p>
                             <span></span>
                         </button>
                     </div>
@@ -63,12 +63,12 @@
             </div>
             <div class="personal-box">
                 <div id="setting" class="personal-container">
-                    <p class="text-demi-30-l5">setting</p>
+                    <p class="text-demi-30-l5" data-i18n="personal.header.setting">setting</p>
                     <div>
                         <div class="personal-container-setting">
-                            <p class="text-demi-s14-l5">theme</p>
+                            <p class="text-demi-s14-l5" data-i18n="personal.text.theme">theme</p>
                             <div class="select" id="theme">
-                                <p class="text-demi-s16-l5 option-select">theme</p>
+                                <p class="text-demi-s16-l5 option-select" data-i18n="personal.text.theme">theme</p>
                                 <img src="../../assets/icons/arrow.svg" alt="">
                                 <div class="select-option">
                                     <p>1</p>
@@ -77,9 +77,9 @@
                             </div>
                         </div>
                         <div class="personal-container-setting">
-                            <p class="text-demi-s14-l5">language</p>
+                            <p class="text-demi-s14-l5" data-i18n="personal.text.language">language</p>
                             <div class="select" id="language">
-                                <p class="text-demi-s16-l5 option-select">language</p>
+                                <p class="text-demi-s16-l5 option-select" data-i18n="personal.text.language">language</p>
                                 <img src="../../assets/icons/arrow.svg" alt="">
                                 <div class="select-option">
                                     <p>1</p>
@@ -88,9 +88,9 @@
                             </div>
                         </div>
                         <div class="personal-container-setting">
-                            <p class="text-demi-s14-l5">palette</p>
+                            <p class="text-demi-s14-l5" data-i18n="personal.text.palette">palette</p>
                             <div class="select" id="palette">
-                                <p class="text-demi-s16-l5 option-select">palette</p>
+                                <p class="text-demi-s16-l5 option-select" data-i18n="personal.text.palette">palette</p>
                                 <img src="../../assets/icons/arrow.svg" alt="">
                                 <div class="select-option">
                                     <p>1</p>
@@ -102,24 +102,24 @@
                     <div>
                         <div class="personal-container-some">
                             <div class="personal-container-setting">
-                                <p class="text-demi-s14-l5">version</p>
+                                <p class="text-demi-s14-l5" data-i18n="personal.header.version">version</p>
                                 <label class="custom-checkbox">
                                     <input type="checkbox" />
                                     <span class="checkmark"></span>
-                                    <p class="text-demi-s16-l5">version for the visually impaired</p>
+                                    <p class="text-demi-s16-l5" data-i18n="personal.text.version">version for the visually impaired</p>
                                 </label>
                             </div>
                             <div class="personal-container-setting no-active">
-                                <p class="text-demi-s14-l5">image</p>
+                                <p class="text-demi-s14-l5" data-i18n="personal.header.image">image</p>
                                 <label class="custom-checkbox">
                                     <input type="checkbox" disabled />
                                     <span class="checkmark"></span>
-                                    <p class="text-demi-s16-l5">disable images</p>
+                                    <p class="text-demi-s16-l5" data-i18n="personal.text.image">disable images</p>
                                 </label>
                             </div>
                         </div>
                         <div class="personal-container-setting no-active">
-                            <p class="text-demi-s14-l5">font size</p>
+                            <p class="text-demi-s14-l5" data-i18n="personal.header.font">font size</p>
                             <div class="settin-size">
                                 <label class="custom-checkbox-size">
                                     <input type="checkbox" disabled/>
@@ -141,37 +141,37 @@
         </section>
         <section class="services">
             <div class="text-section">
-                <p class="text-demi-52-l5">ordered services</p>
+                <p class="text-demi-52-l5" data-i18n-common="services.header.textOrder">ordered services</p>
                 <div class="separators"></div>
                 <div class="services-filter">
-                    <button class="text-demi-32-l5" data-target="ordered">ordered</button>
-                    <button class="text-demi-32-l5" data-target="completed">completed</button>
+                    <button class="text-demi-32-l5" data-i18n-common="services.header.ordered" data-target="ordered">ordered</button>
+                    <button class="text-demi-32-l5" data-i18n-common="services.header.completed" data-target="completed">completed</button>
                     <div class="filter-background"></div>
                 </div>
             </div>
             <div class="filter-section">
                 <div class="filter-box">
-                    <p class="text-demi-s14-l5">search</p>
+                    <p class="text-demi-s14-l5" data-i18n-common="services.filter.search">search</p>
                     <div class="custom-input">
                         <img src="../../assets/icons/search.svg" alt="">
-                        <input type="text" placeholder="search">
+                        <input type="text" placeholder="search" data-i18n-common="services.placeholder.search">
                         <button id="clear-button" type="button">
                             <img src="../../assets/icons/close.svg" alt="Очистить">
                         </button>
                     </div>
                 </div>
                 <div class="filter-box">
-                    <p class="text-demi-s14-l5">filter</p>
+                    <p class="text-demi-s14-l5" data-i18n-common="services.filter.filter">filter</p>
                     <div class="select" id="filter">
-                        <p class="text-demi-s16-l5 option-select">filter</p>
+                        <p class="text-demi-s16-l5 option-select" data-i18n-common="services.filter.filter">filter</p>
                         <img src="../../assets/icons/arrow.svg" alt="">
                         <div class="select-option"></div>
                     </div>
                 </div>
                 <div class="filter-box">
-                    <p class="text-demi-s14-l5">sort</p>
+                    <p class="text-demi-s14-l5" data-i18n-common="services.filter.sort">sort</p>
                     <div class="select" id="sort">
-                        <p class="text-demi-s16-l5 option-select">sort</p>
+                        <p class="text-demi-s16-l5 option-select" data-i18n-common="services.filter.sort">sort</p>
                         <img src="../../assets/icons/arrow.svg" alt="">
                         <div class="select-option"></div>
                     </div>
@@ -181,16 +181,16 @@
         </section>
     </main>
     <footer>
-        <p class="text-demi-s16-h24-l5">2025 © Detailing Workshop. All rights reserved.</p>
+        <p class="text-demi-s16-h24-l5" data-i18n-common="footer.root">2025 © Detailing Workshop. All rights reserved.</p>
         <div class="nav">
-            <a href="/pages/services/services.html" class="half" data-i18n-common="header.a">
-                <p class="text-medium-30" >Our services</p>
+            <a href="/pages/services/services.html" class="half">
+                <p class="text-medium-30" data-i18n-common="footer.menu.services">Our services</p>
                 <span></span>
             </a>
-            <a href="/index.html" class="text-medium-30" data-i18n-common="header.menu.home">Home</a>
-            <a href="/pages/gallery/gallery.html" class="text-medium-30" data-i18n-common="header.menu.gallery">Gallery of works</a>
-            <a href="/pages/contacts/contacts.html" class="text-medium-30" data-i18n-common="header.menu.contacts">Contacts</a>
-            <a href="/pages/FAQ/FAQ.html" class="text-medium-30" data-i18n-common="header.menu.FAQ">FAQ</a>
+            <a href="/index.html" class="text-medium-30" data-i18n-common="footer.menu.home">Home</a>
+            <a href="/pages/gallery/gallery.html" class="text-medium-30" data-i18n-common="footer.menu.gallery">Gallery of works</a>
+            <a href="/pages/contacts/contacts.html" class="text-medium-30" data-i18n-common="footer.menu.contacts">Contacts</a>
+            <a href="/pages/FAQ/FAQ.html" class="text-medium-30" data-i18n-common="footer.menu.FAQ">FAQ</a>
         </div>
     </footer>
     <script type="module" src="../../js/profile/main.js"></script>

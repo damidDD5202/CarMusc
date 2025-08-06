@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="./gallery.css">
-    <title>Gallery</title>
+    <title data-i18n="title">Gallery</title>
 </head>
 <body data-page="gallery">
     <div id="preloader">
         <div class="loader"></div>
-        <p class="text-demi-24-l5">Loading...</p>
+        <p class="text-demi-24-l5" data-i18n-common="preloader">Loading...</p>
     </div>
     <header>
         <nav>
-            <a href="/pages/services/services.html" class="half" data-i18n-common="header.a">
-                <p class="text-medium-30" >Our services</p>
+            <a href="/pages/services/services.html" class="half">
+                <p class="text-medium-30" data-i18n-common="header.menu.services">Our services</p>
                 <span></span>
             </a>
             <a href= "/index.html" class="text-medium-30" data-i18n-common="header.menu.home">Home</a>
@@ -36,7 +36,7 @@
         </section>
         <section class="feedback">
             <div class="text-section">
-                <p class="text-demi-52-l5">feedback from our customers</p>
+                <p class="text-demi-52-l5" data-i18n="feedback.header">feedback from our customers</p>
                 <div class="separators"></div>
             </div>
             <div class="feedback-box">
@@ -52,7 +52,7 @@
         </section>
         <section class="our-work">
             <div class="text-section">
-                <p class="text-demi-52-l5">our work</p>
+                <p class="text-demi-52-l5" data-i18n-common="our-work.header">our work</p>
                 <div class="separators"></div>
             </div>
             <div class="our-work-box">
@@ -68,15 +68,15 @@
         </section>
         <section class="request-service">
             <div class="request-service-text">
-                <p class="text-demi-s50-h70-l5">Do you want the same result? Submit a request!</p>
+                <p class="text-demi-s50-h70-l5" data-i18n="request-service.textUp">Do you want the same result? Submit a request!</p>
                 <div class="separators"></div>
-                <p class="text-medium-36">This is just a part of our work. Do you like what you see? Leave a request and we will find a solution just for you!</p>
+                <p class="text-medium-36" data-i18n="request-service.textDown">This is just a part of our work. Do you like what you see? Leave a request and we will find a solution just for you!</p>
             </div>
             <div class="request-service-box">
                 <div class="request-service-box-service">
-                    <p class="text-demi-s16-l5">choose a service</p>
+                    <p class="text-demi-s16-l5" data-i18n="request-service.choose">choose a service</p>
                     <div class="select future-select" id="service">
-                        <p class="text-demi-s16-l5 option-select">service</p>
+                        <p class="text-demi-s16-l5 option-select" data-i18n="request-service.service">service</p>
                         <img src="../../assets/icons/arrow.svg" alt="">
                         <div class="select-option">
                             <p>1</p>
@@ -84,10 +84,10 @@
                         </div>
                     </div>
                 </div>
-                <textarea class="question-box-message" placeholder="Question about design, tuning, etc."></textarea>    
+                <textarea class="question-box-message" placeholder="Question about design, tuning, etc." data-i18n="request-service.placeholder.quest"></textarea>    
                 <div class="request-service-box-buttons"> 
                     <button class="half">
-                        <p class="text-medium-30-l5" data-i18n="prev.button">SEND</p>
+                        <p class="text-medium-30-l5" data-i18n="request-service.send">SEND</p>
                         <span></span>
                     </button>
                     <div class="question-social">
@@ -106,16 +106,16 @@
         </section>
     </main>
     <footer>
-        <p class="text-demi-s16-h24-l5">2025 © Detailing Workshop. All rights reserved.</p>
+        <p class="text-demi-s16-h24-l5" data-i18n-common="footer.root">2025 © Detailing Workshop. All rights reserved.</p>
         <div class="nav">
-            <a href="/pages/services/services.html" class="half" data-i18n-common="header.a">
-                <p class="text-medium-30" >Our services</p>
+            <a href="/pages/services/services.html" class="half">
+                <p class="text-medium-30" data-i18n-common="footer.menu.services">Our services</p>
                 <span></span>
             </a>
-            <a href="/index.html" class="text-medium-30" data-i18n-common="header.menu.home">Home</a>
-            <a href="/pages/gallery/gallery.html" class="text-medium-30" data-i18n-common="header.menu.gallery">Gallery of works</a>
-            <a href="/pages/contacts/contacts.html" class="text-medium-30" data-i18n-common="header.menu.contacts">Contacts</a>
-            <a href="/pages/FAQ/FAQ.html" class="text-medium-30" data-i18n-common="header.menu.FAQ">FAQ</a>
+            <a href="/index.html" class="text-medium-30" data-i18n-common="footer.menu.home">Home</a>
+            <a href="/pages/gallery/gallery.html" class="text-medium-30" data-i18n-common="footer.menu.gallery">Gallery of works</a>
+            <a href="/pages/contacts/contacts.html" class="text-medium-30" data-i18n-common="footer.menu.contacts">Contacts</a>
+            <a href="/pages/FAQ/FAQ.html" class="text-medium-30" data-i18n-common="footer.menu.FAQ">FAQ</a>
         </div>
     </footer>
     <script type="module" src="../../js/gallery/main.js"></script>

@@ -1,3 +1,5 @@
+import i18n from "../i18n.js";
+
 const data = {
     name: 'damid',
     surname: 'damidov',
@@ -31,6 +33,7 @@ function addDataPersonal(){
         let headerText = document.createElement('p');
         headerText.className = 'text-demi-s14-l5'
         headerText.textContent = keys[i];
+        headerText.setAttribute('data-i18n', `personal.header.${keys[i]}`);
 
         let mainText = document.createElement('p');
         mainText.className = 'text-demi-s20-l5'
@@ -48,6 +51,8 @@ function addDataPersonal(){
 
     boxPersonal.appendChild(div1);
     boxPersonal.appendChild(div2);
+
+    i18n.translate();
 }
 
 const credentials = document.querySelector('#credentials');
@@ -59,6 +64,7 @@ function addDataCredentials(){
     let headerText = document.createElement('p');
     headerText.className = 'text-demi-s14-l5'
     headerText.textContent = log;
+    headerText.setAttribute('data-i18n', `personal.header.log`);
 
     let mainText = document.createElement('p');
     mainText.className = 'text-demi-s20-l5'
@@ -66,6 +72,8 @@ function addDataCredentials(){
 
     textBox.appendChild(headerText);
     textBox.appendChild(mainText);
+
+    i18n.translate();
 }
 
 addDataPersonal();

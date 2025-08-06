@@ -1,10 +1,12 @@
+import i18n from '../i18n.js';
+
 const steps = [
     'We have won several regional competitions in childcare',
     'Our team has been certified by well-known brands',
     'We actively participate in international exhibitions',
     'Our works have been published in magazines and online platforms',
     'We have left over 1,000 satisfied customers',
-    'became the owners of the Russian Detailing Cup',
+    'Became the owners of the Russian Detailing Cup',
 ]
 
 const pathToGrade = './assets/icons/grade.svg';
@@ -41,6 +43,7 @@ function createCard(i){
     let description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5';
     description.textContent = steps[i - 1];
+    description.setAttribute('data-i18n', `steps.step.${i}`);
 
     container.appendChild(containerText);
     container.appendChild(description);
@@ -132,6 +135,8 @@ function adjustLayout() {
     } else {
         addSteps();
     }
+
+    i18n.translate();
 }
 
 document.addEventListener('DOMContentLoaded', function () {

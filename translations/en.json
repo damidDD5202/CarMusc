@@ -1,0 +1,218 @@
+{
+    "common": {
+        "preloader": "Loading...",
+        "header": {
+            "menu": {
+                "services": "Our services",
+                "home": "Home",
+                "gallery": "Gallery of works",
+                "contacts": "Contacts",
+                "FAQ": "FAQ",
+                "setting": "Setting",
+                "profile": "Profile"
+            }
+        },
+        "footer": {
+            "root": "2025 © Detailing Workshop. All rights reserved.",
+            "menu": {
+                "services": "Our services",
+                "home": "Home",
+                "gallery": "Gallery of works",
+                "contacts": "Contacts",
+                "FAQ": "FAQ"
+            }
+        },
+        "services":{
+            "textButton": "More detailed",
+            "textButtonRefuse": "Refuse",
+            "header":{
+                "textOur":"our services",
+                "textOrder": "ordered services",
+                "pasting":"pasting",
+                "detailing":"detailing",
+                "ordered": "ordered",
+                "completed": "completed"
+            },
+            "filter":{
+                "search": "search",
+                "filter": "filter",
+                "sort": "sort" 
+            },
+            "placeholder":{
+                "search": "search"
+            },
+            "pasting":{
+                "1": {
+                    "name":"corrosion treatment",
+                    "description":"We clean the surface, remove old coatings, and apply special anti-corrosion compounds"
+                },
+                "2": {
+                    "name":"lamination of the body",
+                    "description":"This service helps to preserve the original color and shine of the body, as well as makes car maintenance easier"
+                },
+                "3": {
+                    "name":"body painting",
+                    "description":"Using only high-quality paints and modern technologies, we guarantee perfect coverage, resistance to fading, and durability"
+                },
+                "4": {
+                    "name":"painting parts",
+                    "description":"It allows you to restore or change the color of individual elements of your car, such as bumpers, doors, or hoods"
+                },
+                "5": {
+                    "name":"painting discs",
+                    "description":"We offer painting of both steel and alloy wheels using special paints that provide protection against corrosion and mechanical damage"
+                },
+                "6": {
+                    "name":"protective varnish",
+                    "description":"The protective varnish creates a strong barrier, protecting the car from chemicals and mechanical damage"
+                }
+            },
+            "detailing":{
+                "1": {
+                    "name":"headlight polishing",
+                    "description":"Special formulations and tools to restore the headlights to their original appearance, improving visibility on the road"
+                },
+                "2": {
+                    "name":"body polishing",
+                    "description":"We use high-quality polishing pastes and equipment to restore the car's charming shine and depth of color"
+                },
+                "3": {
+                    "name":"ceramic coating",
+                    "description":"Applying a ceramic coating protects against chemicals and mechanical damage, and makes it easier to maintain your vehicle"
+                },
+                "4": {
+                    "name":"interior dry cleaning",
+                    "description":"We clean upholstery, rugs, panels, and other elements using professional products and equipment"
+                },
+                "5": {
+                    "name":"dents removal",
+                    "description":"Special technologies and tools for carefully removing dents, which allows you to preserve the original coating"
+                },
+                "6": {
+                    "name":"protective film",
+                    "description":"The film forms a durable barrier that preserves the original color and shine of the body, making it easier to maintain the vehicle"
+                }
+            }
+        },
+        "question":{
+            "header": "We will answer any question",
+            "placeholder": {
+                "name": "name",
+                "phone": "phone",
+                "quest": "Question about design, tuning, etc."
+            },
+            "send": "send",
+            "contact":{
+                "place": "1 Lenin Street, Minsk, Belarus, 220030",
+                "phone": "+375 (33) 251-66-14",
+                "pochta": "carmusc@carmusc.ru"
+            }
+        },
+        "our-work" : {
+            "header": "our works"
+        }
+    },
+    "home": {
+        "title": "Home",
+        "preview": {
+            "upText": "CAR MUSC",
+            "downText": "Car detailing: perfect cleanliness and body protection. Trust us to take care of your car!",
+            "button": "OUR SERVICE"
+        },
+        "steps":{
+            "text":{
+                "upText": "from the Russian Cup to the World Championships",
+                "downText": "We are proud to have achieved significant success in the world of car detailing. Here are five key achievements that highlight our expertise and dedication"
+            },
+            "step":{
+                "1": "We have won several regional competitions in childcare",
+                "2": "Our team has been certified by well-known brands",
+                "3": "We actively participate in international exhibitions",
+                "4": "Our works have been published in magazines and online platforms",
+                "5": "We have left over 1,000 satisfied customers",
+                "6": "Became the owners of the Russian Detailing Cup"
+            }
+        },
+        "gallery":{
+            "1": "Look at this amazing tandem! Bright colors and stylish rims make these cars True parking",
+            "2": "Our detailing services will give your car a new look, emphasizing its style and individuality",
+            "3": "This style not only attracts attention, but also emphasizes the owner's individualit",
+            "4": "High-quality paintwork and details give it an aggressive and dynamic appearance",
+            "5": "At night, our lighting solutions emphasize its lines and powerful character",
+            "6": "Every detail of the car shines, because we take care of the car so that it looks great!"
+        }
+    },
+    "gallery":{
+        "title": "Gallery",
+        "feedback":{
+            "header": "feedback from our customers"
+        },
+        "request-service":{
+            "textUp": "Do you want the same result? Submit a request!",
+            "textDown": "This is just a part of our work. Do you like what you see? Leave a request and we will find a solution just for you!",
+            "choose": "choose a service",
+            "service": "service",
+            "placeholder": {
+                "quest": "Question about design, tuning, etc."
+            },
+            "send": "send"
+        }
+    },
+    "contacts":{
+        "title": "Contacts",
+        "map":{
+            "textUp": "Professional car detailing and wrapping",
+            "textDown": "We are a team of professionals who turn your car into an ideal. We specialize in high-quality detailing and premium decal, using only proven materials and technologies"
+        },
+        "contact":{
+            "addressHeader": "address",
+            "address": "15 Lenin Street, Minsk, 220030, \n Belarus",
+            "telephoneHeader": "telephone",
+            "hoursHeader": "Working hours",
+            "hours": "mn - fr : 07:00 - 23:00 \n st - sn : 08:00 - 22:00"
+        }
+    },
+    "FAQ":{
+        "title": "FAQ",
+        "answer":{
+            "header": "Frequently Asked Questions"
+        }
+    },
+    "profile":{
+        "title": "Profile",
+        "personal": {
+            "header":{
+                "information": "personal information",
+                "credentials": "account credentials",
+                "everything": "reset everything",
+                "setting": "setting",
+                "version": "version",
+                "image": "image",
+                "font": "font size"
+            },
+            "text":{
+                "change": "change password",
+                "reset": "By clicking this button, you confirm that you want to reset all settings to their default values. This action is irreversible and will result in the removal of all your personalized settings.",
+                "theme":"theme",
+                "language": "language",
+                "palette": "palette",
+                "version": "version for the visually impaired",
+                "image": "disable images"
+            },
+            "placeholder":{
+                "old": "old password",
+                "new": "new password",
+                "theme":"theme",
+                "language": "language",
+                "palette": "palette"
+            },
+            "button":{
+                "change": "Change",
+                "reset": "Reset"
+            }
+        }
+    },
+    "services":{
+        "title": "Services"
+    }
+}
