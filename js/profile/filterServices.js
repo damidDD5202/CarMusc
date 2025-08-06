@@ -151,7 +151,7 @@ function createCard(service, i){
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5 name-service';
     name.textContent = service.name;
-    name.setAttribute('data-i18n', `services.${select == 'ordered' ? 'pasting' : 'detailing'}.${i}.name`);
+    name.setAttribute('data-i18n-common', `services.${select == 'ordered' ? 'pasting' : 'detailing'}.${i}.name`);
 
     const price = document.createElement('p');
     price.className = 'text-demi-24-l5 price';
@@ -307,21 +307,26 @@ document.addEventListener('DOMContentLoaded', function () {
 function addOption(selectBox, option, value, defaultText){
     const optionBox = selectBox.getElementsByClassName('select-option')[0];
     const selectOption = selectBox.getElementsByClassName('option-select')[0];
-
+    selectOption.setAttribute('data-i18n-common', `services.filter.${defaultText}`);
+    
     for(let i = 0; i < option.length; i++){
         let tempOption = document.createElement('p');
         tempOption.className = 'text-demi-s20-h30-l5 option';
         tempOption.textContent = option[i];
+        tempOption.setAttribute('data-i18n-common', `services.option.${option[i]}`);
 
         tempOption.addEventListener('click', function(){
             if(value.value == option[i]){
                 value.value = null;
+                selectOption.setAttribute('data-i18n-common', `services.filter.${defaultText}`);
                 selectOption.textContent = defaultText;
             }else{
                 value.value = option[i];
+                selectOption.setAttribute('data-i18n-common', `services.option.${option[i]}`);
                 selectOption.textContent = value.value;
             }
 
+            i18n.translate();
             addOrShowCards();
         })
 
@@ -330,3 +335,4 @@ function addOption(selectBox, option, value, defaultText){
 
     i18n.translate();
 }
+

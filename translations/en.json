@@ -41,6 +41,16 @@
             "placeholder":{
                 "search": "search"
             },
+            "option":{
+                "cleaning": "cleaning",
+                "list": "list",
+                "polishing": "polishing",
+                "washing": "washing",
+                "name A - Z": "name A - Z",
+                "name Z - A": "name Z - A",
+                "price 1 - 9": "price 1 - 9",
+                "price 9 - 1": "price 9 - 1"
+            },
             "pasting":{
                 "1": {
                     "name":"corrosion treatment",
@@ -197,7 +207,9 @@
                 "language": "language",
                 "palette": "palette",
                 "version": "version for the visually impaired",
-                "image": "disable images"
+                "image": "disable images",
+                "english": "english",
+                "russian": "russian"
             },
             "placeholder":{
                 "old": "old password",
