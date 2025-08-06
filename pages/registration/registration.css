@@ -1,0 +1,127 @@
+.registration{
+    padding: 120px 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-container{
+    display: flex;
+    width: 290px;
+    flex-direction: column;
+    gap: 30px;
+    height: fit-content;
+}
+
+.form{
+    display: flex;
+    position: relative;
+    margin-bottom: 0px;
+    transition: all 0.3s ease-out;
+}
+
+.form >input{
+    position: relative;
+    z-index: 100;
+    background-color: var(--background);
+}
+
+.form >p{
+    position: absolute;
+    z-index: 80;
+    top: 0;
+    left: 30px;
+    right: 10px;
+    width: 240px;
+    transition: all 0.3s ease-out;
+    margin: 0;
+}
+
+.form.error{
+    margin-bottom: 40px;
+}
+
+.form.error:nth-of-type(1), .form.error:nth-of-type(2), .form.error:nth-of-type(4){
+    margin-bottom: 20px;
+}
+
+.form.error >input{
+    background-color: var(--help-20);
+}
+
+.form.error >p{
+    top: 56px;
+}
+
+
+/*---- checkbox ----*/
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.custom-checkbox input {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.custom-checkbox .checkmark {
+    width: 20px; 
+    height: 20px; 
+    background-color: var(--help-20);
+    border: 1px solid var(--background-60);
+    margin-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: '';
+    position: absolute;
+    left: 4px; 
+    top: 4px; 
+    width: 10px; 
+    height: 10px; 
+    background-color: var(--background-60);
+}
+
+
+
+/*---- button -----*/
+
+button{
+    box-sizing: border-box;
+    padding: 13px 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: -10px;
+}
+
+button >p{
+    z-index: 10;
+    text-transform: none;
+}
+
+button >span{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: var(--help);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    transition: width 0.5s ease;
+}
+
+button >span{
+    width: 53%;
+}
+
+button:hover >span{
+    width: 100%;
+}

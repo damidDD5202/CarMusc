@@ -208,6 +208,16 @@
     margin: 0;
 }
 
+.text-demi-s16-h20-l5{
+    font-family: 'GroteskDemi', sans;
+    font-size: 1em;
+    line-height: 1.25;
+    text-decoration: none;
+    letter-spacing: 0.05em; /*5%*/
+    color: var(--text-color, #fff); 
+    margin: 0;
+}
+
 .text-demi-s16-h24-l5{
     font-family: 'GroteskDemi', sans;
     font-size: 1em;
