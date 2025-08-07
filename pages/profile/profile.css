@@ -110,6 +110,21 @@
 }
 
 
+/*--------------guest-------------*/
+
+.personal-guest{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.personal-guest >p{
+    white-space: pre-wrap;
+    opacity: 0.6;
+}
+
+
+
 
 #credentials{
     max-width: 290px;    
@@ -137,7 +152,7 @@
     color: var(--text-color-60)
 }
 
-#everything >div >button, .personal-password >button{
+#everything >div >button, .personal-password >button, .personal-guest >a{
     box-sizing: border-box;
     padding: 13px 25px;
     position: relative;
@@ -146,12 +161,12 @@
     width: fit-content;
 }
 
-#everything >div >button >p, .personal-password >button >p{
+#everything >div >button >p, .personal-password >button >p, .personal-guest >a >p{
     z-index: 10;
     text-transform: none;
 }
 
-#everything >div >button >span, .personal-password >button >span{
+#everything >div >button >span, .personal-password >button >span, .personal-guest >a >span{
     display: flex;
     width: 50%;
     height: 100%;
@@ -167,11 +182,11 @@
     margin-top: 15px;
 }
 
-.personal-password >button >span{
+.personal-password >button >span, .personal-guest >a >span{
     width: 53%;
 }
 
-#everything >div >button:hover >span{
+#everything >div >button:hover >span, .personal-guest >a:hover >span {
     width: 100%;
 }
 

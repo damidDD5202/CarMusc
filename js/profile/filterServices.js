@@ -1,8 +1,9 @@
 import i18n from "../i18n.js";
-import { getCartUser } from "../../server/api.js";
-
+import { completedCartService, getCartUser, getServices, deleteCartService, getAllCart } from "../../server/api.js";
+import { openModal } from "../modal.js";
 
 const lang = localStorage.getItem('language') || 'en';
+const user = JSON.parse(localStorage.getItem('user'));
 
 const images = {
     cleaning: '../../assets/icons/cleaning.svg',
@@ -12,7 +13,7 @@ const images = {
 }
 
 // на случай не работы сервера
-const services = {
+let servicesData = {
     ordered: [
         {
             image: images.washing,
@@ -91,10 +92,80 @@ const services = {
     ]
 }
 
-const cards = {
+let services;
+let servicesDataTemp;
+
+let cards = {
     ordered: [],
     completed: []
 }
+
+document.addEventListener('DOMContentLoaded', async function(){
+    await tryGetServices();
+})
+
+async function tryGetServices(){
+    servicesDataTemp = await getServices();
+
+    try{
+        const cartUser = await (user.role != 'admin' ? getCartUser(user.id) : adminCartOnUser(await getAllCart()));
+
+        services = {ordered: cartUser.ordered, completed: cartUser.completed}
+
+        services = await enrichServices(services, servicesDataTemp); 
+    }catch(error){
+        services = servicesData;
+
+        console.log('error',error);
+    }
+
+    addOrShowCards();
+}
+
+async function enrichServices(services, servicesDataTemp) {
+    const findServiceById = (id) => {
+        for (const category in servicesDataTemp) {
+            const service = servicesDataTemp[category].find(service => service.id === id);
+            if (service) {
+                return service; 
+            }
+        }
+        return null;
+    };
+
+    const enrichArray = (array) => {
+        return array.map(item => {
+            const service = findServiceById(item.id);
+            return {
+                ...item,
+                ...(service ? service : {}) 
+            };
+        });
+    };
+
+    // Обогащаем ordered и completed
+    services.ordered = enrichArray(services.ordered);
+    services.completed = enrichArray(services.completed);
+
+    return services; 
+}
+
+async function adminCartOnUser(carts){
+    const cartsAdmin = {ordered:[], completed: []};
+    console.log(carts)
+    cartsAdmin.ordered = carts.reduce((acc, cart) => {
+        return acc.concat(cart.ordered.map(item => ({ ...item, cartId: cart.id })));
+    }, []);
+
+    cartsAdmin.completed = carts.reduce((acc, cart) => {
+        return acc.concat(cart.completed.map(item => ({ ...item, cartId: cart.id })));
+    }, []);
+
+    console.log(cartsAdmin);
+
+    return cartsAdmin;
+}
+
 
 const servicesBox = document.getElementsByClassName('services-box')[0];
 
@@ -165,16 +236,17 @@ let filterValue = { value: null };;
 let sortValue = { value: null };;
 
 function createCard(service, i){
+    
     const container = document.createElement('div');
     container.className = 'container-service';
 
     const icon = document.createElement('img');
-    icon.src = service.image;
+    icon.src = images[service.image] ?? service.image;
 
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5 name-service';
     name.textContent = service.name;
-    name.setAttribute('data-i18n-common', `services.${select == 'ordered' ? 'pasting' : 'detailing'}.${i}.name`);
+    name.setAttribute('data-i18n-common', `services.${service.id}.name`);
 
     const price = document.createElement('p');
     price.className = 'text-demi-24-l5 price';
@@ -185,19 +257,62 @@ function createCard(service, i){
 
     const textButton = document.createElement('p');
     textButton.className = 'text-medium-30-l5';
-    textButton.textContent = select == 'ordered' ? 'Refuse' : 'More detailed';
-    textButton.setAttribute('data-i18n-common', select == 'ordered' ? `services.textButtonRefuse` : `services.textButtonMoreDetailed`);
+    textButton.textContent = select == 'ordered' ? (user.role != 'admin' ? 'Refuse' : 'Done') : 'More detailed'; 
+    textButton.setAttribute('data-i18n-common', select == 'ordered' ? (user.role != 'admin' ? `services.textButtonRefuse` : `services.textButtonDone`) : `services.textButtonMoreDetailed`);
 
     const span = document.createElement('span');
     const description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5 description';
     description.textContent = service.description;
-    description.setAttribute('data-i18n-common', `services.${select == 'ordered' ? 'pasting' : 'detailing'}.${i}.description`);
+    description.setAttribute('data-i18n-common', `services.${service.id}.description`);
 
     // append
 
     buttonOrder.appendChild(textButton);
     buttonOrder.appendChild(span);
+
+    buttonOrder.addEventListener('click', async function(event) {
+        event.stopPropagation();
+
+        const description = document.createElement('p');
+        description.classList.add('text-demi-s20-l5');
+        description.classList.add('desc');
+
+        if(user.role != 'admin'){
+            if(select == 'ordered'){
+                description.textContent = 'Do you really want to cancel the service?';
+
+                openModal('Cancel the service', description, async () => {
+                    await deleteCartService(user.id, service.id);
+                    window.location.reload();
+                });
+            }else{
+                description.textContent = `date ordered: ${service.dateOrdered}\ndate done: ${service.dateDone}\nprice: ${service.oldPrice}$`;
+                
+                openModal('More detailed', description, () => {
+                    console.log('more');
+                });
+            }
+        }
+
+        if(user.role == 'admin'){
+            if(select == 'ordered'){
+                description.textContent = 'Move the service to done?';
+                
+                openModal('Perform a service', description, async () => {
+                    await completedCartService(service.cartId, service.id);
+                    window.location.reload();
+                });
+            }else{
+                description.textContent = `date ordered: ${service.dateOrdered}\ndate done: ${service.dateDone}\nprice: ${service.oldPrice}$`;
+                
+                openModal('More detailed', description, () => {
+                    console.log('more');
+                });
+            }
+        }
+    });
+
 
     container.appendChild(icon);
     container.appendChild(name);
@@ -227,7 +342,7 @@ function createCard(service, i){
 function addOrShowCards() {
     servicesBox.innerHTML = '';
 
-    if (cards[select].length === 0) {
+    if (cards[select].length != services[select].length) {
         for (let i = 0; i < services[select].length; i++) {
             cards[select].push(createCard(services[select][i], i + 1));
         }
@@ -309,9 +424,6 @@ clearButton.addEventListener('click', function(event){
     customInput.classList.add('active');
     addOrShowCards();
 });
-
-addOrShowCards();
-
 
 // ---      select      ---//
 

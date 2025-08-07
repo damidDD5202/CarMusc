@@ -21,14 +21,26 @@
   ],
   "carts": [
     {
-      "id": "1",
-      "ordered": [],
-      "completed": []
-    },
-    {
       "id": "2",
       "ordered": [],
-      "completed": []
+      "completed": [
+        {
+          "id": "1",
+          "dateDone": "07.08.2025 22:34"
+        },
+        {
+          "id": "1",
+          "dateDone": "07.08.2025 22:35"
+        },
+        {
+          "id": "2",
+          "dateDone": "07.08.2025 22:35"
+        },
+        {
+          "id": "3",
+          "dateDone": "07.08.2025 22:35"
+        }
+      ]
     }
   ],
   "services": {

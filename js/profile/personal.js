@@ -1,10 +1,15 @@
 import i18n from "../i18n.js";
 import { updatePassword } from "../../server/api.js";
+import { openModal } from "../modal.js";
 
-const data = JSON.parse(localStorage.getItem('user'));
+const user = JSON.parse(localStorage.getItem('user'));
 
 const personal = document.querySelector('#information');
 const boxPersonal = personal.getElementsByClassName('personal-container-data')[0];
+
+const guestBox = document.getElementsByClassName('personal-guest')[0];
+const mainBox = document.getElementsByClassName('personal-box')[0];
+const serviceBox = document.getElementsByClassName('services')[0];
 
 function addDataPersonal(){
     const keys = ['name', 'surname', 'patronymic', 'date of birth', 'telephone', 'email'];
@@ -26,7 +31,7 @@ function addDataPersonal(){
 
         let mainText = document.createElement('p');
         mainText.className = 'text-demi-s20-l5'
-        mainText.textContent = data[keys[i]];
+        mainText.textContent = user[keys[i]];
 
         container.appendChild(headerText);
         container.appendChild(mainText);
@@ -57,7 +62,7 @@ function addDataCredentials(){
 
     let mainText = document.createElement('p');
     mainText.className = 'text-demi-s20-l5'
-    mainText.textContent = data[log];
+    mainText.textContent = user[log];
 
     textBox.appendChild(headerText);
     textBox.appendChild(mainText);
@@ -65,8 +70,23 @@ function addDataCredentials(){
     i18n.translate();
 }
 
-addDataPersonal();
-addDataCredentials();
+document.addEventListener('DOMContentLoaded', function(){
+    if(user){
+        guestBox.remove();
+        
+        addDataPersonal();
+        addDataCredentials();
+    }else{
+        addDataGuest();
+    }
+})
+
+function addDataGuest(){
+    mainBox.style.setProperty('justify-content', 'left', 'important');
+    boxPersonal.remove();
+    credentials.remove();
+    serviceBox.remove();
+}
 
 
 // ----- logic for change password ---- 
@@ -79,7 +99,7 @@ changePassword.addEventListener('click', async function(event) {
     event.preventDefault();
     event.stopPropagation();
 
-    if (oldPassword.value !== data.password) {
+    if (oldPassword.value !== user.password) {
         console.log('Старый пароль не совпадает');
         return;
     }
@@ -89,15 +109,23 @@ changePassword.addEventListener('click', async function(event) {
         return;
     }
 
+    const description = document.createElement('p');
+    description.classList.add('text-demi-s20-l5');
+    description.classList.add('desc');
+
     try {
-        await updatePassword(data.id, newPassword.value);
-        data.password = newPassword.value;
-        localStorage.setItem('user', JSON.stringify(data));
+        await updatePassword(user.id, newPassword.value);
+        user.password = newPassword.value;
+        localStorage.setItem('user', JSON.stringify(user));
         
         oldPassword.value = '';
         newPassword.value = ''
 
-        console.log('Пароль изменён успешно');
+        description.textContent = 'Your password has been successfully changed!';
+
+        openModal('Changing the password', description, () => {
+            console.log('change password');
+        });
     } catch (error) {
         console.error('Ошибка:', error);
     }

@@ -4,11 +4,18 @@ import i18n from "../i18n.js";
 /* ----------- reset ----------- */
 const reset = document.querySelector('#reset');
 
-reset.addEventListener('click', function(){
-    // добавить всплытие предупреждающего окна;
-    localStorage.clear();
+reset.addEventListener('click', function() {
+
+    // Удаляем все ключи, кроме 'user'
+    for (let i = localStorage.length - 1; i >= 0; i--) {
+        const key = localStorage.key(i);
+        if (key !== 'user') {
+            localStorage.removeItem(key);
+        }
+    }
     location.reload();
-})
+    
+});
 
 
 
