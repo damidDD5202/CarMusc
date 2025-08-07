@@ -23,7 +23,7 @@
             }
         },
         "services":{
-            "textButtonOrder": "Заказать",
+            "textButtonOrder": "Заказ",
             "textButtonMoreDetailed": "Подробнее",
             "textButtonRefuse": "Отказ",
             "textButtonChange": "Менять",

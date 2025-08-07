@@ -26,12 +26,17 @@
 
 .question-box >div:nth-of-type(2){
     gap: 30px 50px;
+    align-items: center;
 }
 
 .question-social{
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.question-box button >p{
+    text-transform: uppercase;
 }
 
 .question-social .icon-container{

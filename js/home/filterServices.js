@@ -220,21 +220,21 @@ function createCard(service, i){
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5';
     name.textContent = service.name;
-    name.setAttribute('data-i18n-common', `services.${select}.${i}.name`);
+    name.setAttribute('data-i18n-common', `services.${i}.name`);
 
     const description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5'
     description.textContent = service.description;
-    description.setAttribute('data-i18n-common', `services.${select}.${i}.description`);
+    description.setAttribute('data-i18n-common', `services.${i}.description`);
 
     const button = document.createElement('a');
-    button.href = '';
+    button.href = './pages/services/services.html';
     button.className = 'half';
 
     const textButton = document.createElement('p');
     textButton.className = 'text-demi-s18-h25-l5';
     textButton.textContent = 'More detailed';
-    textButton.setAttribute('data-i18n-common', 'services.textButton');
+    textButton.setAttribute('data-i18n-common', 'services.textButtonMoreDetailed');
 
     const buttonBackground = document.createElement('span');
 

@@ -227,7 +227,7 @@
     }
 }
 
-@media(max-width: 709px){
+@media(max-width: 759px){
     .container-service{
         padding: 15px 30px 25px 30px;      
         gap: 0 15px;  
