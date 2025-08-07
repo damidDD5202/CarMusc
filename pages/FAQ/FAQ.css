@@ -144,3 +144,10 @@
     }
 }
 
+
+
+.no-services-message {
+    text-align: center;
+    margin: auto;
+    color: var(--help)
+}

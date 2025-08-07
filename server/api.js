@@ -241,6 +241,63 @@ export const updateServicePrice = async (serviceId, newPrice) => {
 };
 
 
+// ---- FAQ ----
+export const getQuestions = async () => {
+    const response = await fetch('http://localhost:3000/questions', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    if (!response.ok) {
+        throw new Error('Ошибка при получении вопросов');
+    }
+    return response.json();
+};
+
+
+export const addQuestion = async (question) => {
+    const response = await fetch('http://localhost:3000/questions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({question}),
+    });
+
+    if (!response.ok) throw new Error('Ошибка при добавлении вопроса');
+
+    return response.json();
+};
+
+
+export const addAnswerQuestion = async (idQuestion, answer) => {
+    const response = await fetch(`http://localhost:3000/questions/${idQuestion}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({answer}),
+    });
+
+    if (!response.ok) throw new Error('Ошибка при добавлении ответа на вопрос');
+
+    return response.json();
+};
+
+
+export const deleteQuestion = async (idQuestion) => {
+    const response = await fetch(`http://localhost:3000/questions/${idQuestion}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+
+    if (!response.ok) throw new Error('Ошибка при удалении вопроса');
+
+    return response.json(); 
+};
 
 //----------------
 function formatDate() {

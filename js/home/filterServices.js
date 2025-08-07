@@ -12,31 +12,37 @@ const images = {
 const services = {
     pasting: [
         {
+            id: 1,
             image: images.washing,
             name: 'corrosion treatment',
             description: 'We clean the surface, remove old coatings, and apply special anti-corrosion compounds',
         },
         {
+            id: 2,
             image: images.polishing,
             name: 'lamination of the body',
             description: 'This service helps to preserve the original color and shine of the body, as well as makes car maintenance easier',
         },
         {
+            id: 3,
             image: images.cleaning,
             name: 'body painting',
             description: 'Using only high-quality paints and modern technologies, we guarantee perfect coverage, resistance to fading, and durability',
         },
         {
+            id: 4,
             image: images.cleaning,
             name: 'painting parts',
             description: 'It allows you to restore or change the color of individual elements of your car, such as bumpers, doors, or hoods',
         },
         {
+            id: 5,
             image: images.cleaning,
             name: 'painting discs',
             description: 'We offer painting of both steel and alloy wheels using special paints that provide protection against corrosion and mechanical damage',
         },
         {
+            id: 6,
             image: images.list,
             name: 'protective varnish',
             description: 'The protective varnish creates a strong barrier, protecting the car from chemicals and mechanical damage',
@@ -44,31 +50,37 @@ const services = {
     ],
     detailing: [
         {
+            id: 7,
             image: images.polishing,
             name: 'headlight polishing',
             description: 'Special formulations and tools to restore the headlights to their original appearance, improving visibility on the road',
         },
         {
+            id: 8,
             image: images.polishing,
             name: 'body polishing',
             description: 'We use high-quality polishing pastes and equipment to restore the car\'s charming shine and depth of color',
         },
         {
+            id: 9,
             image: images.cleaning,
             name: 'ceramic coating',
             description: 'Applying a ceramic coating protects against chemicals and mechanical damage, and makes it easier to maintain your vehicle',
         },
         {
+            id: 10,
             image: images.list,
             name: 'interior dry cleaning',
             description: 'The protective varnish creates a strong barrier, protecting the car from chemicals and mechanical damage',
         },
         {
+            id: 11,
             image: images.washing,
             name: 'dents removal',
             description: 'Special technologies and tools for carefully removing dents, which allows you to preserve the original coating',
         },
         {
+            id: 12,
             image: images.washing,
             name: 'protective film',
             description: 'The film forms a durable barrier that preserves the original color and shine of the body, making it easier to maintain the vehicle',

@@ -1,22 +1,51 @@
-const answerQuestion = [
+import { addAnswerQuestion, deleteQuestion, getQuestions } from "../../server/api.js";
+import { openModal } from "../modal.js";
+
+
+const user = JSON.parse(localStorage.getItem('user'));
+
+document.addEventListener('DOMContentLoaded', async function(){
+    try{
+        const dataQuestion = await getQuestions();
+         
+        answerQuestion = user.role == 'admin' ? dataQuestion : filterForUser(dataQuestion);
+
+    }catch(error){
+        answerQuestion = answerDataDefault;
+    }
+
+    createOrShowAnswer();
+})
+
+function filterForUser(data) {
+    return data.filter(question => question.answer !== undefined);
+}
+
+
+const answerDataDefault = [
     {
+        id: 1,
         question: 'How long does it take to completely wrap a car in film?',
         answer: null
     },
     {
+        id: 2,
         question: 'Is it possible to remove the protective film without damaging the factory paint?',
         answer: `Yes, if the film is removed by professionals! \n • Modern materials (for example, XPEL) are removed without leaving any traces, even after 5+ years of use. \n • We use a heat gun and special solutions for gentle detachment. \n • Important: Do not attempt to remove the film yourself — the risk of damaging the paintwork is higher if the film is removed incorrectly.`
     },
     {
+        id: 3,
         question: 'Is it possible to remove the protective film without damaging the factory paint?',
         answer: null
     },
     {
+        id: 4,
         question: 'Why is ceramic coating better than wax or polishing?',
         answer: null
     }
 ]
 
+let answerQuestion = [];
 let answer = [];
 let pages = [];
 
@@ -59,9 +88,17 @@ function createContainer(content){
     container.appendChild(answerContainer);
     container.appendChild(answer);
 
-    if(!content.answer){
+    const inputAnswer = document.createElement('input');
+    inputAnswer.placeholder = 'answer';
+
+    const description = document.createElement('p');
+    description.classList.add('text-demi-s20-l5');
+    description.classList.add('desc');
+
+    if(!content.answer && user.role == 'admin'){
         const button = document.createElement('button');
         button.className = 'half';
+        button.id = `asnwer${content.id}`
 
         const textButton = document.createElement('p');
         textButton.className = 'text-medium-30';
@@ -71,6 +108,50 @@ function createContainer(content){
         
         button.appendChild(textButton);
         button.appendChild(background);
+
+        button.addEventListener('click', async function(){
+            async function myUpdate(){
+                try{
+                    addAnswerQuestion(content.id, inputAnswer.value);
+                    window.location.reload();
+                }catch(error){
+                    console.log(error);
+                }
+            }
+
+            openModal('Add answer', inputAnswer, () => myUpdate());
+        })
+
+        container.appendChild(button);
+    }
+
+    if(user.role == 'admin'){
+        const button = document.createElement('button');
+        button.className = 'half';
+
+        const textButton = document.createElement('p');
+        textButton.className = 'text-medium-30';
+        textButton.textContent = 'Delete question';
+
+        const background = document.createElement('span');
+        
+        button.appendChild(textButton);
+        button.appendChild(background);
+
+        button.addEventListener('click', async function(){
+            async function myUpdate(){
+                try{
+                    deleteQuestion(content.id);
+                    window.location.reload();
+                }catch(error){
+                    console.log(error);
+                }
+            }
+            description.textContent = 'Do you really want to delete the question?';
+
+            openModal('Delete question', description, () => myUpdate());
+        })
+
 
         container.appendChild(button);
     }
@@ -205,13 +286,21 @@ function createOrShowAnswer(){
 
     const limitedEndIndex = Math.min(endIndex, answer.length);
 
-    for(let i = startIndex; i < limitedEndIndex; i++){
-        answerBox.appendChild(answer[i]);
+    if(answer.length == 0){
+        const noServicesMessage = document.createElement('p');
+        noServicesMessage.className = 'text-demi-32-l5 no-services-message';
+        noServicesMessage.textContent = 'No question available at the moment.';
+
+        answerBox.appendChild(noServicesMessage);
+    }else{
+        for(let i = startIndex; i < limitedEndIndex; i++){
+            answerBox.appendChild(answer[i]);
+        }
     }
+    
+
 }
 
 function addPage(){
 
 }
-
-createOrShowAnswer();
