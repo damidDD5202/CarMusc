@@ -23,8 +23,10 @@
             }
         },
         "services":{
-            "textButton": "Подробнее",
+            "textButtonOrder": "Заказать",
+            "textButtonMoreDetailed": "Подробнее",
             "textButtonRefuse": "Отказ",
+            "textButtonChange": "Менять",
             "header":{
                 "textOur":"Наши услуги",
                 "textOrder": "Заказанные услуги",

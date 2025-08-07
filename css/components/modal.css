@@ -1,0 +1,96 @@
+.modal {
+    display: block; /* Показываем модальное окно */
+    position: fixed; /* Остается на месте */
+    z-index: 10000; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Прокрутка при необходимости */
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+}
+
+.modal-content {
+    background-color: var(--background);
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--background-60);
+    width: 100%;
+    max-width: 320px;
+    position: fixed; /* Используем фиксированное позиционирование */
+    top: 50%; /* Ставим верхнюю границу на 50% от высоты окна */
+    left: 50%; /* Ставим левую границу на 50% от ширины окна */
+    transform: translate(-50%, -50%); /* Сдвигаем элемент на половину его ширины и высоты */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal-content >p{
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.desc{
+    opacity: 0.8;
+    white-space: pre-wrap; 
+    text-align: left !important;
+}
+
+.close-button {
+    color: car(help-white);
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--background-60);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/*---button---*/
+
+
+.modal-content >button{
+    box-sizing: border-box;
+    padding: 13px 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.modal-content >button >p{
+    z-index: 10;
+    text-transform: none;
+}
+
+.modal-content >button >span{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    background-color: var(--help);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    transition: width 0.5s ease;
+}
+
+.modal-content >button >span{
+    width: 53%;
+}
+
+.modal-content >button:hover >span{
+    width: 100%;
+}

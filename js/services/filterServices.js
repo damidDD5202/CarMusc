@@ -1,6 +1,9 @@
 import i18n from "../i18n.js";
+import { addCartService, getCartUserFilter, getServices, updateServicePrice } from "../../server/api.js";
+import { openModal } from "../modal.js";
 
 const lang = localStorage.getItem('language') || 'en';
+const user = JSON.parse(localStorage.getItem('user'));
 
 const images = {
     cleaning: '../../assets/icons/cleaning.svg',
@@ -9,40 +12,40 @@ const images = {
     washing: '../../assets/icons/washing.svg',
 }
 
-const services = {
+let servicesData = {
     pasting: [
         {
-            image: images.washing,
+            image: 'washing',
             name: 'corrosion treatment',
             price: 15,
             description: 'we clean the surface, remove old coatings, and apply special anti-corrosion compounds',
         },
         {
-            image: images.polishing,
+            image: 'polishing',
             name: 'lamination of the body',
             price: 15,
             description: 'This service helps to preserve the original color and shine of the body, as well as makes car maintenance easier',
         },
         {
-            image: images.cleaning,
+            image: 'cleaning',
             name: 'body painting',
             price: 20,
             description: 'Using only high-quality paints and modern technologies, we guarantee perfect coverage, resistance to fading, and durability',
         },
         {
-            image: images.cleaning,
+            image: 'cleaning',
             name: 'painting parts',
             price: 12,
             description: 'It allows you to restore or change the color of individual elements of your car, such as bumpers, doors, or hoods',
         },
         {
-            image: images.cleaning,
+            image: 'cleaning',
             name: 'painting discs',
             price: 41,
             description: 'We offer painting of both steel and alloy wheels using special paints that provide protection against corrosion and mechanical damage',
         },
         {
-            image: images.list,
+            image: 'list',
             name: 'protective varnish',
             price: 15,
             description: 'The protective varnish creates a strong barrier, protecting the car from chemicals and mechanical damage',
@@ -50,37 +53,37 @@ const services = {
     ],
     detailing: [
         {
-            image: images.polishing,
+            image: 'polishing',
             name: 'headlight polishing',
             price: 15,
             description: 'special formulations and tools to restore the headlights to their original appearance, improving visibility on the road',
         },
         {
-            image: images.polishing,
+            image: 'polishing',
             name: 'body polishing',
             price: 15,
             description: 'We use high-quality polishing pastes and equipment to restore the car\'s charming shine and depth of color',
         },
         {
-            image: images.cleaning,
+            image: 'cleaning',
             name: 'ceramic coating',
             price: 15,
             description: 'Applying a ceramic coating protects against chemicals and mechanical damage, and makes it easier to maintain your vehicle',
         },
         {
-            image: images.list,
+            image: 'list',
             name: 'interior dry cleaning',
             price: 15,
             description: 'The protective varnish creates a strong barrier, protecting the car from chemicals and mechanical damage',
         },
         {
-            image: images.washing,
+            image: 'washing',
             name: 'dents removal',
             price: 15,
             description: 'Special technologies and tools for carefully removing dents, which allows you to preserve the original coating',
         },
         {
-            image: images.washing,
+            image: 'washing',
             name: 'protective film',
             price: 15,
             description: 'The film forms a durable barrier that preserves the original color and shine of the body, making it easier to maintain the vehicle',
@@ -88,9 +91,27 @@ const services = {
     ]
 }
 
-const cards = {
+let services;
+
+let cards = {
     pasting: [],
     detailing: []
+}
+
+document.addEventListener('DOMContentLoaded', async function(){
+    await tryGetServices();
+})
+
+async function tryGetServices(){
+    try{
+        services = await getServices();
+    }catch(error){
+        services = servicesData;
+
+        console.log('error',error);
+    }
+
+    addOrShowCards();
 }
 
 const servicesBox = document.getElementsByClassName('services-box')[0];
@@ -166,7 +187,7 @@ function createCard(service, i){
     container.className = 'container-service';
 
     const icon = document.createElement('img');
-    icon.src = service.image;
+    icon.src = images[service.image];
 
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5 name-service';
@@ -182,14 +203,15 @@ function createCard(service, i){
 
     const textButton = document.createElement('p');
     textButton.className = 'text-medium-30-l5';
-    textButton.textContent = 'Order';
-    textButton.setAttribute('data-i18n-common', 'services.textButton');
+    textButton.textContent = user?.role != 'admin' ? 'Order' : 'Change';
+    textButton.setAttribute('data-i18n-common', user?.role != 'admin' ? 'services.textButtonOrder' : 'services.textButtonChange');
 
     const span = document.createElement('span');
     const description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5 description';
     description.textContent = service.description;
     description.setAttribute('data-i18n-common', `services.${select}.${i}.description`);
+
 
     // append
 
@@ -201,6 +223,51 @@ function createCard(service, i){
     container.appendChild(price);
     container.appendChild(buttonOrder);
     container.appendChild(description);
+
+    buttonOrder.addEventListener('click', async function(event) {
+        event.stopPropagation();
+
+        let cartUserOrdered = await getCartUserFilter(user?.id, 'ordered');
+
+        const description = document.createElement('p');
+        description.classList.add('text-demi-s20-l5');
+        description.classList.add('desc');
+
+        if(user){
+            if(user.role != 'admin'){
+                if (cartUserOrdered.some(order => order.id == service.id)) {
+                    description.textContent = 'You have already added the service to your shopping cart!';
+
+                    openModal('Order services', description, () =>{
+                        console.log('Упс, бывает, что забыл о том, что уже добавил')
+                    });
+                } else {
+                    description.textContent = 'Do you really want to order a service?';
+
+                    openModal('Order services', description, ()=> addCartService(user.id, 'ordered', {id: service.id, date: new Date()}));
+                }
+            }else{
+                const inputPrice = document.createElement('input');
+                inputPrice.placeholder = 'price';
+                
+                async function myUpdate(){
+                    try{
+                        updateServicePrice(service.id, inputPrice.value);
+                        window.location.reload();
+                    }catch(error){
+                        console.log(error);
+                    }
+                }
+
+                openModal('Change price', inputPrice, () => myUpdate());
+            }
+        }else{
+            description.textContent = 'To order a service, you must be logged in!\n\nprofile --> sign in\\up';
+
+            openModal('Order services', description, () => {window.location.href = '../../pages/profile/profile.html'});
+        }
+        
+    });
 
     container.addEventListener('click', function() {
         if (containerCard) {
@@ -224,7 +291,7 @@ function createCard(service, i){
 function addOrShowCards() {
     servicesBox.innerHTML = '';
 
-    if (cards[select].length === 0) {
+    if (cards[select].length != services[select].length) {
         for (let i = 0; i < services[select].length; i++) {
             cards[select].push(createCard(services[select][i], i + 1));
         }
@@ -301,13 +368,13 @@ inputField.addEventListener('input', function() {
 
 clearButton.addEventListener('click', function(event){
     event.stopPropagation();
+
     inputField.value = ''; 
     inputField.focus(); 
     customInput.classList.add('active');
+
     addOrShowCards();
 });
-
-addOrShowCards();
 
 
 // ---      select      ---//

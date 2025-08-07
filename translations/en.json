@@ -23,8 +23,10 @@
             }
         },
         "services":{
-            "textButton": "More detailed",
+            "textButtonOrder": "Order",
+            "textButtonMoreDetailed": "More detailed",
             "textButtonRefuse": "Refuse",
+            "textButtonChange": "Change",
             "header":{
                 "textOur":"our services",
                 "textOrder": "ordered services",

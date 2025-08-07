@@ -1,4 +1,6 @@
 import i18n from "../i18n.js";
+import { getCartUser } from "../../server/api.js";
+
 
 const lang = localStorage.getItem('language') || 'en';
 
@@ -9,6 +11,7 @@ const images = {
     washing: '../../assets/icons/washing.svg',
 }
 
+// на случай не работы сервера
 const services = {
     ordered: [
         {
@@ -182,8 +185,8 @@ function createCard(service, i){
 
     const textButton = document.createElement('p');
     textButton.className = 'text-medium-30-l5';
-    textButton.textContent = 'Refuse';
-    textButton.setAttribute('data-i18n-common', `services.textButtonRefuse`);
+    textButton.textContent = select == 'ordered' ? 'Refuse' : 'More detailed';
+    textButton.setAttribute('data-i18n-common', select == 'ordered' ? `services.textButtonRefuse` : `services.textButtonMoreDetailed`);
 
     const span = document.createElement('span');
     const description = document.createElement('p');

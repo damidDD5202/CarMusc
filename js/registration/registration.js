@@ -1,6 +1,7 @@
 import { getUsers, addUser } from "../../server/api.js";
 
 const userData = {};
+
 let users;
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -139,7 +140,6 @@ regButton.addEventListener('click', async function(event){
     }else{
         try {
             userData.id = await maxIndex() + 1;
-            userData.service = {ordered: [], completed: []};
 
             await addUser(userData);
 

@@ -68,6 +68,7 @@ function addDataCredentials(){
 addDataPersonal();
 addDataCredentials();
 
+
 // ----- logic for change password ---- 
 
 const oldPassword = document.querySelector('#old');
@@ -77,7 +78,7 @@ const changePassword = document.querySelector('#change');
 changePassword.addEventListener('click', async function(event) {
     event.preventDefault();
     event.stopPropagation();
-    
+
     if (oldPassword.value !== data.password) {
         console.log('Старый пароль не совпадает');
         return;
@@ -93,6 +94,9 @@ changePassword.addEventListener('click', async function(event) {
         data.password = newPassword.value;
         localStorage.setItem('user', JSON.stringify(data));
         
+        oldPassword.value = '';
+        newPassword.value = ''
+
         console.log('Пароль изменён успешно');
     } catch (error) {
         console.error('Ошибка:', error);
