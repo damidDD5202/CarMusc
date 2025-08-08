@@ -2,13 +2,19 @@
 @import url('../css/components.css');
 @import url('../assets/fonts/font.css');
 
+html{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
 body{
     font-size: var(--font-size-base);
     background-color: var(--background);
     color: var(--text-color);
     margin: 0 auto;
-    padding: 0;
+    padding: 0 auto;
     transition: background-color 0.3s, color 0.3s;
+    max-width: 1440px;
 }
 
 a{
