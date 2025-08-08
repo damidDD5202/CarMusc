@@ -442,7 +442,7 @@ function addOption(selectBox, option, value, defaultText){
             
             addOrShowCards();
         })
-
+        
         optionBox.appendChild(tempOption);
     }
 

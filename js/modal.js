@@ -1,6 +1,8 @@
+import i18n from "./i18n.js";
+
 let isModalOpen = false; 
 
-export const createModal = (title, content, onConfirm) => {
+export const createModal = (title, titlei18n, content, onConfirm) => {
     if (isModalOpen) return; 
 
     isModalOpen = true; 
@@ -19,6 +21,7 @@ export const createModal = (title, content, onConfirm) => {
     const modalTitle = document.createElement('p');
     modalTitle.className = 'text-demi-30-l5'
     modalTitle.textContent = title;
+    modalTitle.setAttribute('data-i18n-common', `modal.${titlei18n}`);
 
     const confirmButton = document.createElement('button');
     confirmButton.classList.add('half');
@@ -26,6 +29,7 @@ export const createModal = (title, content, onConfirm) => {
     const textButton = document.createElement('p');
     textButton.className = 'text-demi-24-l5'
     textButton.textContent = 'Confirm';
+    textButton.setAttribute('data-i18n-common', 'modal.func.confirm');
 
     const spanButton = document.createElement('span');
         
@@ -58,6 +62,7 @@ export const createModal = (title, content, onConfirm) => {
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
 
+    i18n.translate();
     document.body.style.overflow = 'hidden';
 };
 
@@ -67,6 +72,6 @@ const closeModal = (modal) => {
     document.body.style.overflow = '';
 };
 
-export const openModal = (title, content, onConfirm) => {
-    createModal(title, content, onConfirm);
+export const openModal = (title, titlei18n, content, onConfirm) => {
+    createModal(title, titlei18n, content, onConfirm);
 };

@@ -22,6 +22,17 @@
                 "FAQ": "FAQ"
             }
         },
+        "modal":{
+            "title":{
+                "errorQuestion": "Error question"
+            },
+            "description":{
+                "logInPost": "Log in to post a question"
+            },
+            "func":{
+                "confirm": "Confirm"
+            }
+        },
         "services":{
             "noServiceText": "No services available at the moment.",
             "textButtonOrder": "Order",
@@ -229,6 +240,11 @@
                 "version": "version",
                 "image": "image",
                 "font": "font size"
+            },
+            "guest":{
+                "logged": "You are not logged in at the moment!\nPlease log in on the site if you have an account. Otherwise, register!",
+                "authorization":"Authorization",
+                "registration":"Registration"
             },
             "text":{
                 "change": "change password",

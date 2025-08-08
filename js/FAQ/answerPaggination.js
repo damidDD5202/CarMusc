@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     try{
         const dataQuestion = await getQuestions();
          
-        answerQuestion = user.role == 'admin' ? dataQuestion : filterForUser(dataQuestion);
+        answerQuestion = user?.role == 'admin' ? dataQuestion : filterForUser(dataQuestion);
 
     }catch(error){
         answerQuestion = answerDataDefault;
@@ -95,7 +95,7 @@ function createContainer(content){
     description.classList.add('text-demi-s20-l5');
     description.classList.add('desc');
 
-    if(!content.answer && user.role == 'admin'){
+    if(!content.answer && user?.role == 'admin'){
         const button = document.createElement('button');
         button.className = 'half';
         button.id = `asnwer${content.id}`
@@ -125,7 +125,7 @@ function createContainer(content){
         container.appendChild(button);
     }
 
-    if(user.role == 'admin'){
+    if(user?.role == 'admin'){
         const button = document.createElement('button');
         button.className = 'half';
 

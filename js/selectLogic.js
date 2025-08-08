@@ -1,3 +1,5 @@
+import i18n from "./i18n.js";
+
 const selectAll = document.querySelectorAll('.select');
 
 let lastSelect;
@@ -23,6 +25,6 @@ document.addEventListener('click', function() {
     selectAll.forEach(select => {
         select.classList.remove('active');
     });
-
+    
     lastSelect = null;
 });

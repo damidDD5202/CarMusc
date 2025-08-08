@@ -1,11 +1,11 @@
 import { addQuestion } from "../server/api.js";
 import { openModal } from "./modal.js";
 
-const allowedPaths = ['/index.html', '/contacts.html', '/FAQ.html']; // Укажите пути, на которых должен работать скрипт
+const allowedPaths = ['/index.html', '/contacts.html', '/FAQ.html', '/services.html']; // Укажите пути, на которых должен работать скрипт
 
 const currentPath = window.location.pathname;
 
-if (allowedPaths.includes(currentPath)) {
+if (allowedPaths.some(path => currentPath.includes(path))) {
     const user = JSON.parse(localStorage.getItem('user'));
 
     const textarea = document.querySelector('#questionText');
@@ -15,10 +15,12 @@ if (allowedPaths.includes(currentPath)) {
     description.classList.add('text-demi-s20-l5');
     description.classList.add('desc');
     description.textContent = 'Log in to post a question';
+    description.setAttribute('data-i18n-common', `modal.description.logInPost`);
+
 
     sendButton.addEventListener('click', async function(){
         if(!user){
-            openModal('Error question', description, async () => {
+            openModal('Error question', 'title.errorQuestion', description, async () => {
                 console.log('Need authorization!')
             });
 
