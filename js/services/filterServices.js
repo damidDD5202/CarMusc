@@ -217,7 +217,7 @@ function createCard(service, i){
     const name = document.createElement('p');
     name.className = 'text-demi-24-l5 name-service';
     name.textContent = service.name
-    name.setAttribute('data-i18n-common', `services.${select}.${i}.name`);
+    name.setAttribute('data-i18n-common', `services.${i}.name`);
 
     const price = document.createElement('p');
     price.className = 'text-demi-24-l5 price';
@@ -235,7 +235,7 @@ function createCard(service, i){
     const description = document.createElement('p');
     description.className = 'text-demi-s16-h24-l5 description';
     description.textContent = service.description;
-    description.setAttribute('data-i18n-common', `services.${select}.${i}.description`);
+    description.setAttribute('data-i18n-common', `services.${i}.description`);
 
 
     // append
@@ -268,7 +268,7 @@ function createCard(service, i){
                     });
                 } else {
                     description.textContent = 'Do you really want to order a service?';
-  
+
                     openModal('Order services', description, ()=> addCartService(user.id, 'ordered', {id: service.id, dateOrdered: formatDate(), oldPrice: service.price}));
                 }
             }else{
@@ -321,12 +321,12 @@ function addOrShowCards() {
             cards[select].push(createCard(services[select][i], i + 1));
         }
     }
-
+    
     let filteredCards = cards[select].filter(card => {
         if (!filterValue.value && !inputField.value) return true; 
 
         const service = services[select][cards[select].indexOf(card)];
-        const matchesFilter = filterValue.value ? getKeyByValue(images, service.image) === filterValue.value : true;
+        const matchesFilter = filterValue.value ? getKeyByValue(images, images[service.image]) === filterValue.value : true;
         const matchesSearch = service.name.toLowerCase().includes(inputField.value.toLowerCase()); 
 
         return matchesFilter && matchesSearch; 
@@ -356,6 +356,8 @@ function addOrShowCards() {
         const noServicesMessage = document.createElement('p');
         noServicesMessage.className = 'text-demi-32-l5 no-services-message';
         noServicesMessage.textContent = 'No services available at the moment.';
+        noServicesMessage.setAttribute('data-i18n-common', `services.noServiceText`);
+
         servicesBox.appendChild(noServicesMessage);
     } else {
         filteredCards.forEach(card => {
@@ -425,16 +427,19 @@ function addOption(selectBox, option, value, defaultText){
         let tempOption = document.createElement('p');
         tempOption.className = 'text-demi-s20-h30-l5 option';
         tempOption.textContent = option[i];
+        tempOption.setAttribute('data-i18n-common', `services.option.${option[i]}`);
 
         tempOption.addEventListener('click', function(){
             if(value.value == option[i]){
                 value.value = null;
+                selectOption.setAttribute('data-i18n-common', `services.filter.${defaultText}`);
                 selectOption.textContent = defaultText;
             }else{
                 value.value = option[i];
+                selectOption.setAttribute('data-i18n-common', `services.option.${option[i]}`);
                 selectOption.textContent = value.value;
             }
-
+            
             addOrShowCards();
         })
 

@@ -1,35 +1,40 @@
 import { addQuestion } from "../server/api.js";
 import { openModal } from "./modal.js";
 
-const user = JSON.parse(localStorage.getItem('user'));
+const allowedPaths = ['/index.html', '/contacts.html', '/FAQ.html']; // Укажите пути, на которых должен работать скрипт
 
-const textarea = document.querySelector('#questionText');
-const sendButton = document.querySelector('#sendQuestion')
+const currentPath = window.location.pathname;
 
-const description = document.createElement('p');
-description.classList.add('text-demi-s20-l5');
-description.classList.add('desc');
-description.textContent = 'Log in to post a question';
+if (allowedPaths.includes(currentPath)) {
+    const user = JSON.parse(localStorage.getItem('user'));
 
-sendButton.addEventListener('click', async function(){
-    if(!user){
-        openModal('Error question', description, async () => {
-            console.log('Need authorization!')
-        });
+    const textarea = document.querySelector('#questionText');
+    const sendButton = document.querySelector('#sendQuestion')
 
-        return;
-    }
+    const description = document.createElement('p');
+    description.classList.add('text-demi-s20-l5');
+    description.classList.add('desc');
+    description.textContent = 'Log in to post a question';
 
-    const quest= textarea.value;
+    sendButton.addEventListener('click', async function(){
+        if(!user){
+            openModal('Error question', description, async () => {
+                console.log('Need authorization!')
+            });
 
-    if(quest.length < 10 || quest.length > 500){
-        alert('Количество символов в вопросе должны быть от 10 до 500');
-    }else{
-        await addQuestion(quest);
-        textarea.value = '';
-        window.location.reload();
-    }
-})
+            return;
+        }
 
+        const quest= textarea.value;
+
+        if(quest.length < 10 || quest.length > 500){
+            alert('Количество символов в вопросе должны быть от 10 до 500');
+        }else{
+            await addQuestion(quest);
+            textarea.value = '';
+            window.location.reload();
+        }
+    })
+}
 
                 

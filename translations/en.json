@@ -23,6 +23,7 @@
             }
         },
         "services":{
+            "noServiceText": "No services available at the moment.",
             "textButtonOrder": "Order",
             "textButtonMoreDetailed": "More detailed",
             "textButtonRefuse": "Refuse",
@@ -154,7 +155,37 @@
     "gallery":{
         "title": "Gallery",
         "feedback":{
-            "header": "feedback from our customers"
+            "header": "feedback from our customers",
+            "1": {
+                "name": "Maria Ivanova",
+                "service": "Corrosion Treatment",
+                "description": "Excellent service! After the treatment, the body looks brand new, and I no longer worry about corrosion."
+            },
+            "2": {
+                "name": "Alexey Petrov",
+                "service": "Body Lamination",
+                "description": "Lamination really helped preserve the color and shine. I am very satisfied with the result!"
+            },
+            "3": {
+                "name": "Olga Smirnova",
+                "service": "Body Painting",
+                "description": "The painting was done at the highest level! The color matches perfectly, and the coating is very durable."
+            },
+            "4": {
+                "name": "Dmitry Nikolaev",
+                "service": "Part Painting",
+                "description": "Restored the color of the bumpers, and now they look brand new. Highly recommend!"
+            },
+            "5": {
+                "name": "Anna Petrova",
+                "service": "Wheel Painting",
+                "description": "The wheel painting was done professionally; now they are protected from corrosion and look stylish."
+            },
+            "6": {
+                "name": "Ivan Sidorov",
+                "service": "Protective Varnish",
+                "description": "The protective varnish really works! My car is now protected from chemicals and damage."
+            }
         },
         "request-service":{
             "textUp": "Do you want the same result? Submit a request!",

@@ -1,25 +1,44 @@
+import i18n from "../i18n.js";
+
 const feedbackData = [
     {
-        name: 'egor astapenko',
-        service: 'cleanning',
-        description: 'we clean the surface, remove old and apply special anti-corrosion compounds coatings, and apply special anti-corrosion compounds',
+        id: '1',
+        name: 'Maria Ivanova',
+        service: 'Corrosion Treatment',
+        description: 'Excellent service! After the treatment, the body looks brand new, and I no longer worry about corrosion.',
     },
     {
-        name: 'egor astapenko1',
-        service: 'cleanning1',
-        description: 'we clean the surface, remove old and apply special anti-corrosion compounds coatings, and apply special anti-corrosion compounds',
+        id: '2',
+        name: 'Alexey Petrov',
+        service: 'Body Lamination',
+        description: 'Lamination really helped preserve the color and shine. I am very satisfied with the result!',
     },
     {
-        name: 'egor astapenko2',
-        service: 'cleanning2',
-        description: 'we clean the surface, remove old and apply special anti-corrosion compounds coatings, and apply special anti-corrosion compounds',
+        id: '3',
+        name: 'Olga Smirnova',
+        service: 'Body Painting',
+        description: 'The painting was done at the highest level! The color matches perfectly, and the coating is very durable.',
     },
     {
-        name: 'egor astapenko3',
-        service: 'cleanning3',
-        description: 'we clean the surface, remove old and apply special anti-corrosion compounds coatings, and apply special anti-corrosion compounds',
+        id: '4',
+        name: 'Dmitry Nikolaev',
+        service: 'Part Painting',
+        description: 'Restored the color of the bumpers, and now they look brand new. Highly recommend!',
     },
+    {
+        id: '5',
+        name: 'Anna Petrova',
+        service: 'Wheel Painting',
+        description: 'The wheel painting was done professionally; now they are protected from corrosion and look stylish.',
+    },
+    {
+        id: '6',
+        name: 'Ivan Sidorov',
+        service: 'Protective Varnish',
+        description: 'The protective varnish really works! My car is now protected from chemicals and damage.',
+    }
 ]
+
 
 
 const feedback = document.getElementsByClassName('feedback')[0];
@@ -124,14 +143,17 @@ function createCard(content){
     const name = document.createElement('p');
     name.className = 'text-demi-22-l5';
     name.textContent = content.name;
+    name.setAttribute('data-i18n', `feedback.${content.id}.name`);
 
     const service = document.createElement('p');
     service.className = 'text-medium-20';
     service.textContent = content.service;
+    service.setAttribute('data-i18n', `feedback.${content.id}.service`);
 
     const description = document.createElement('p');
     description.className = 'text-demi-s14-h20-l5';
     description.textContent = content.description;
+    description.setAttribute('data-i18n', `feedback.${content.id}.description`);
 
     borderIcon.appendChild(person);
     container.appendChild(borderIcon);
@@ -151,6 +173,9 @@ function addOrShowCards(){
         }
     }
 
+    console.log(cards)
+
+
     for(let i = 0; i < countCard; i++){
         if(countCard == 3 && i == 1 || countCard == 2 && i == 1 || countCard == 1 && i == 0){
             let activeCard = cards[i];
@@ -160,10 +185,12 @@ function addOrShowCards(){
             feedbackContainer.appendChild(cards[i]);
         }
     }
+    
+    i18n.translate();
 }
 
-addOrShowCards();
 
+// addOrShowCards();
 
 
 

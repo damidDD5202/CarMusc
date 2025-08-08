@@ -364,7 +364,7 @@ function addOrShowCards() {
         if (!filterValue.value && !inputField.value) return true; 
 
         const service = services[select][cards[select].indexOf(card)];
-        const matchesFilter = filterValue.value ? getKeyByValue(images, service.image) === filterValue.value : true;
+        const matchesFilter = filterValue.value ? getKeyByValue(images, images[service.image]) === filterValue.value : true;
         const matchesSearch = service.name.toLowerCase().includes(inputField.value.toLowerCase()); 
 
         return matchesFilter && matchesSearch; 
@@ -394,6 +394,8 @@ function addOrShowCards() {
         const noServicesMessage = document.createElement('p');
         noServicesMessage.className = 'text-demi-32-l5 no-services-message';
         noServicesMessage.textContent = 'No services available at the moment.';
+        noServicesMessage.setAttribute('data-i18n-common', `services.noServiceText`);
+
         servicesBox.appendChild(noServicesMessage);
     } else {
         filteredCards.forEach(card => {
