@@ -24,13 +24,30 @@
         },
         "modal":{
             "title":{
-                "errorQuestion": "Error question"
+                "errorQuestion": "Error question",
+                "orderServices": "Order services",
+                "changePrice": "Change price",
+                "cancelService": "Cancel the service",
+                "moreDetailed": "More detailed",
+                "performService": "Perform a service",
+                "deleteQuestion": "Delete question",
+                "addAnswer": "Add answer"
             },
             "description":{
-                "logInPost": "Log in to post a question"
+                "logInPost": "Log in to post a question",
+                "successAdd":"You have already added the service to your shopping cart!",
+                "wantOrder":"Do you really want to order a service?",
+                "needAuth": "To order a service, you must be logged in!\n\nprofile --> sign in\\up",
+                "cancelService":"Do you really want to cancel the service?",
+                "moveDone":"Move the service to done?",
+                "deleteQuestion": "Do you really want to delete the question?"
             },
             "func":{
                 "confirm": "Confirm"
+            },
+            "placeholder":{
+                "price": "price",
+                "answer": "answer"
             }
         },
         "services":{

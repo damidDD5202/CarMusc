@@ -90,6 +90,7 @@ function createContainer(content){
 
     const inputAnswer = document.createElement('input');
     inputAnswer.placeholder = 'answer';
+    inputAnswer.setAttribute('data-i18n-common', `modal.placeholder.answer`);
 
     const description = document.createElement('p');
     description.classList.add('text-demi-s20-l5');
@@ -119,7 +120,7 @@ function createContainer(content){
                 }
             }
 
-            openModal('Add answer', inputAnswer, () => myUpdate());
+            openModal('Add answer', 'title.addAnswer', inputAnswer, () => myUpdate());
         })
 
         container.appendChild(button);
@@ -148,8 +149,9 @@ function createContainer(content){
                 }
             }
             description.textContent = 'Do you really want to delete the question?';
+            description.setAttribute('data-i18n-common', `modal.description.deleteQuestion`);
 
-            openModal('Delete question', description, () => myUpdate());
+            openModal('Delete question', 'title.deleteQuestion', description, () => myUpdate());
         })
 
 

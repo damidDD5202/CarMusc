@@ -28,7 +28,13 @@
   "carts": [
     {
       "id": "2",
-      "ordered": [],
+      "ordered": [
+        {
+          "id": "2",
+          "dateOrdered": "11.08.2025 10:25",
+          "oldPrice": 15
+        }
+      ],
       "completed": [
         {
           "id": "1",
@@ -45,6 +51,12 @@
         {
           "id": "3",
           "dateDone": "07.08.2025 22:35"
+        },
+        {
+          "id": "1",
+          "dateOrdered": "11.08.2025 10:25",
+          "oldPrice": "11",
+          "dateDone": "11.08.2025 10:26"
         }
       ]
     }
@@ -55,7 +67,7 @@
         "id": "1",
         "image": "washing",
         "name": "corrosion treatment",
-        "price": "11",
+        "price": "12",
         "description": "we clean the surface, remove old coatings, and apply special anti-corrosion compounds"
       },
       {
@@ -146,13 +158,13 @@
       "answer": "dsfsdfsdfsdfdsf"
     },
     {
-      "id": "0c2c",
-      "question": "sdfdfsdfsdfsfsdfsf",
-      "answer": "123344"
+      "id": "13de",
+      "question": "arfagergfgragsaersgf",
+      "answer": "Some answer"
     },
     {
-      "id": "13de",
-      "question": "arfagergfgragsaersgf"
+      "id": "6614",
+      "question": "Some question of user"
     }
   ]
 }

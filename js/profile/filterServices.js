@@ -128,7 +128,7 @@ async function tryGetServices(){
     }catch(error){
         services = servicesData;
 
-        console.log('error',error);
+        console.log('error','Пользователь неавторизирован или', error);
     }
 
     addOrShowCards();
@@ -269,8 +269,8 @@ function createCard(service, i){
 
     const textButton = document.createElement('p');
     textButton.className = 'text-medium-30-l5';
-    textButton.textContent = select == 'ordered' ? (user.role != 'admin' ? 'Refuse' : 'Done') : 'More detailed'; 
-    textButton.setAttribute('data-i18n-common', select == 'ordered' ? (user.role != 'admin' ? `services.textButtonRefuse` : `services.textButtonDone`) : `services.textButtonMoreDetailed`);
+    textButton.textContent = select == 'ordered' ? (user?.role != 'admin' ? 'Refuse' : 'Done') : 'More detailed'; 
+    textButton.setAttribute('data-i18n-common', select == 'ordered' ? (user?.role != 'admin' ? `services.textButtonRefuse` : `services.textButtonDone`) : `services.textButtonMoreDetailed`);
 
     const span = document.createElement('span');
     const description = document.createElement('p');
@@ -293,15 +293,17 @@ function createCard(service, i){
         if(user.role != 'admin'){
             if(select == 'ordered'){
                 description.textContent = 'Do you really want to cancel the service?';
+                description.setAttribute('data-i18n-common', `modal.description.cancelService`);
 
-                openModal('Cancel the service', description, async () => {
+                openModal('Cancel the service', 'title.cancelService', description, async () => {
                     await deleteCartService(user.id, service.id);
                     window.location.reload();
                 });
             }else{
                 description.textContent = `date ordered: ${service.dateOrdered}\ndate done: ${service.dateDone}\nprice: ${service.oldPrice}$`;
-                
-                openModal('More detailed', description, () => {
+                description.setAttribute('data-i18n-common', `modal.description.orderDate`);
+
+                openModal('More detailed', 'title.moreDetailed', description, () => {
                     console.log('more');
                 });
             }
@@ -310,15 +312,17 @@ function createCard(service, i){
         if(user.role == 'admin'){
             if(select == 'ordered'){
                 description.textContent = 'Move the service to done?';
-                
-                openModal('Perform a service', description, async () => {
+                description.setAttribute('data-i18n-common', `modal.description.moveDone`);
+
+                openModal('Perform a service', 'title.performService', description, async () => {
                     await completedCartService(service.cartId, service.id);
                     window.location.reload();
                 });
             }else{
                 description.textContent = `date ordered: ${service.dateOrdered}\ndate done: ${service.dateDone}\nprice: ${service.oldPrice}$`;
-                
-                openModal('More detailed', description, () => {
+                description.setAttribute('data-i18n-common', `modal.description.orderDate`);
+
+                openModal('More detailed', 'title.moreDetailed', description, () => {
                     console.log('more');
                 });
             }

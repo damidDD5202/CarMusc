@@ -262,19 +262,22 @@ function createCard(service, i){
             if(user.role != 'admin'){
                 if (cartUserOrdered.some(order => order.id == service.id)) {
                     description.textContent = 'You have already added the service to your shopping cart!';
+                    description.setAttribute('data-i18n-common', `modal.description.successAdd`);
 
-                    openModal('Order services', description, () =>{
+                    openModal('Order services', 'title.orderServices', description, () =>{
                         console.log('Упс, бывает, что забыл о том, что уже добавил')
                     });
                 } else {
                     description.textContent = 'Do you really want to order a service?';
+                    description.setAttribute('data-i18n-common', `modal.description.wantOrder`);
 
-                    openModal('Order services', description, ()=> addCartService(user.id, 'ordered', {id: service.id, dateOrdered: formatDate(), oldPrice: service.price}));
+                    openModal('Order services', 'title.orderServices', description, ()=> addCartService(user.id, 'ordered', {id: service.id, dateOrdered: formatDate(), oldPrice: service.price}));
                 }
             }else{
                 const inputPrice = document.createElement('input');
                 inputPrice.placeholder = 'price';
-                
+                inputPrice.setAttribute('data-i18n-common', `modal.placeholder.price`);
+
                 async function myUpdate(){
                     try{
                         updateServicePrice(service.id, inputPrice.value);
@@ -284,12 +287,13 @@ function createCard(service, i){
                     }
                 }
 
-                openModal('Change price', inputPrice, () => myUpdate());
+                openModal('Change price', 'title.changePrice', inputPrice, () => myUpdate());
             }
         }else{
             description.textContent = 'To order a service, you must be logged in!\n\nprofile --> sign in\\up';
+            description.setAttribute('data-i18n-common', `modal.description.needAuth`);
 
-            openModal('Order services', description, () => {window.location.href = '../../pages/profile/profile.html'});
+            openModal('Order services', 'title.orderServices', description, () => {window.location.href = '../../pages/profile/profile.html'});
         }
         
     });
