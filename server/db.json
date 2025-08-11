@@ -25,8 +25,9 @@
       "date of birth": "22.04.2004"
     },
     {
-      "id": 3,
-      "password": "123Ad-123",
+      "id": "3",
+      "login": "baad",
+      "password": "123Ad-12",
       "name": "dfg",
       "surname": "dfg",
       "telephone": "+375 (33) 613-76-41",
@@ -71,8 +72,14 @@
       ]
     },
     {
-      "id": 3,
-      "ordered": [],
+      "id": "3",
+      "ordered": [
+        {
+          "id": "3",
+          "dateOrdered": "12.08.2025 00:08",
+          "oldPrice": 20
+        }
+      ],
       "completed": []
     }
   ],

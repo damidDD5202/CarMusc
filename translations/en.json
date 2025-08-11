@@ -32,7 +32,10 @@
                 "performService": "Perform a service",
                 "deleteQuestion": "Delete question",
                 "addAnswer": "Add answer",
-                "setting": "Setting"
+                "setting": "Setting",
+                "changingPassword": "Changing the password",
+                "oldPassword": "The old password doesn't match",
+                "changingPasswordError": "Error! Changing the password"
             },
             "description":{
                 "logInPost": "Log in to post a question",
@@ -259,6 +262,12 @@
     },
     "profile":{
         "title": "Profile",
+        "modal": {
+            "succesfully": "Your password has been successfully changed!",
+            "changingPassword": "Changing the password",
+            "error": "Error! Changing the password",
+            "success" : "Password changed successfully"
+        },
         "personal": {
             "header":{
                 "information": "personal information",
@@ -307,5 +316,62 @@
     },
     "services":{
         "title": "Services"
+    },
+    "authorization":{
+        "title": "Authorization",
+        "header":{
+            "textOur": "authorization"
+        },
+        "placeholder":{
+            "login": "login",
+            "password":"password"
+        },
+        "error": {
+            "login": "there is no such login",
+            "password":"invalid password"
+        },
+        "text":{
+            "auth": "Authorization"
+        }
+    },
+    "registration":{
+        "title": "Registration",
+        "header":{
+            "textOur": "registration"
+        },
+        "placeholder":{
+            "name": "name",
+            "surname":"surname",
+            "patronymic":"patronymic (optional)",
+            "telephone":"telephone",
+            "email":"email",
+            "date":"date of birth",
+            "login":"login",
+            "password":"password",
+            "repeatThePassword":"repeat the password"
+        },
+        "error": {
+            "name": "name must contain 2 to 20 characters",
+            "surname":"surname must contain 2 to 20 characters",
+            "patronymic":"no more than 20 characters \n (*optional field)",
+            "telephone":"number corresponds to +375 (xx) xxx-xx-xx",
+            "email":"email must contain 2 to 30 characters and match ...@gmail.com",
+            "date":"there is no such date.<br>Only for users over the age of 16",
+            "busy": "This username is busy",
+            "laterLogin": "Please try again later. Enter your username",
+            "laterPassword": "Please try again later. Enter your password",
+            "1" : "The password must include at least one lowercase letter",
+            "2" : "he password must include at least one capital letter",
+            "3" : "The password must include at least one circe",
+            "4" : "The password must include at least one special character",
+            "5" : "The password must contain 8-20 characters",
+            "6" : "The password should not be among the top 100 passwords of 202",
+            "noMatch" : "passwords don't match"
+        },
+        "text":{
+            "generate": "generate",
+            "agree": "User Agreement",
+            "reg": "Registration"
+        }
     }
 }

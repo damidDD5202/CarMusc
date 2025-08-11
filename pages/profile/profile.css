@@ -277,9 +277,45 @@
 
 /*----------*/
 
+@media(max-width: 1039px){
+    .personal-box{
+        padding: 0px;
+    }
+
+    .personal-box:nth-of-type(1){
+        padding-bottom: 75px;
+    }
+}
+
+
 @media(max-width: 939px){
     .personal{
         padding: 50px;
+    }
+}
+
+@media(max-width: 789px){
+    .personal-box{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .personal-container{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .personal-container >p{
+        text-align: center;
+    }
+
+    .personal-container >div{
+        justify-content: center;
+        align-items: center;
+        gap: 30px !important;
     }
 }
 
@@ -287,6 +323,7 @@
     .personal{
         padding: 50px 15px;
     }
+
 }
 
 

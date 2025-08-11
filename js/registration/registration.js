@@ -1,4 +1,6 @@
 import { getUsers, addUser, getAllLogin } from "../../server/api.js";
+import i18n from "../i18n.js";
+
 
 const commonPasswords = [
     "Tes1_0000",
@@ -103,7 +105,6 @@ const commonPasswords = [
     "232323"
 ];
 
-
 const userData = {};
 
 let users;
@@ -111,7 +112,7 @@ let login;
 
 document.addEventListener('DOMContentLoaded', async () => {
     await loadUsers();
-    
+
     inputHandler('name', (value) => (value.length < 2 || value.length > 20));
     inputHandler('surname', (value) => (value.length < 2 || value.length > 20));
     inputHandler('patronymic', (value) => value.length > 20);
@@ -314,6 +315,7 @@ loginBoxButton.addEventListener('click', async () => {
         
         inputLogin.value = nickname
     }else{
+        loginBox.classList.remove('error');   
         loginBox.classList.add('generate');
     }
 });
@@ -326,6 +328,7 @@ function loginInput(){
     })
 
     inputLogin.addEventListener('blur', () => {
+        loginBox.classList.remove('generate');  
         if(login.includes(inputLogin.value) || inputLogin.value.length < 2 || inputLogin.value.length > 30) loginBox.classList.add('error');
     });
 }
