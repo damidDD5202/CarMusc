@@ -344,6 +344,20 @@ inputPasswordBoxRepeat.addEventListener('paste', (event) => {
     event.preventDefault(); 
 });
 
+//---------show/hide----------
+
+const showHide = document.getElementById('showHide');
+console.log(showHide)
+
+showHide.addEventListener('click', () => {
+    console.log('sdfdsf')
+    const isText = inputPassword.type === 'text';
+    console.log(isText)
+    
+    inputPassword.type = isText ? 'password' : 'text';
+    inputPasswordBoxRepeat.type = isText ? 'password' : 'text';
+})
+
 let countChancePassword = 0;
 
 passwordBoxButton.addEventListener('click', async () => {
@@ -434,15 +448,7 @@ function checkPasswordRepeat(value) {
 }
 
 
-//---------show/hide----------
 
-const showHide = document.getElementById('showHide');
-showHide.addEventListener('click', () => {
-    const isText = passwordBoxButton.type === 'text';
-
-    inputPassword.type = isText ? 'password' : 'text';
-    inputPasswordBoxRepeat.type = isText ? 'password' : 'text';
-})
 
 
 // ------------------ REGISTRATION ---------------------

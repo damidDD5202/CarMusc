@@ -105,12 +105,24 @@ p.one, p.two, p.three, p.four, p.five, p.six{
 
 .hide{
     position: absolute;
-    z-index: 100;
+    z-index: 9999;
     top: 15px;
     left: 187px;
     padding-left: 15px;
     height: 15px;
     width: 15px;
+}
+
+p.hide{
+    position: absolute;
+    z-index: 9999;
+    top: 13px;
+    left: 190px;
+    padding-left: 15px;
+    height: 15px;
+    width: 15px;
+    opacity: 0;
+    cursor: pointer;
 }
 
 /*---- checkbox ----*/
