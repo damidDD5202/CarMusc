@@ -70,12 +70,21 @@
                     </div>
                     <div class="form" id="login">
                         <input type="text" placeholder="login">
-                        <p class="text-demi-s16-h20-l5 generate">Please try again later. Enter your username</p>
-                        <p class="text-demi-s16-h20-l5 use">this username is busy</p>
+                        <p class="text-demi-s16-h20-l5 use">This username is busy</p>
+                        <p class="text-demi-s16-h20-l5 generateError">Please try again later. Enter your username</p>
+                        <p class="text-medium-14-l5 generate" id="loginGenerate">generate</p>
                     </div>
                     <div class="form" id="password">
                         <input type="text" placeholder="password">
-                        <p class="text-demi-s16-h20-l5">sdfsdfsd</p>
+                        <p class="text-demi-s16-h20-l5 generateError">Please try again later. Enter your username</p>
+                        <p class="text-demi-s16-h20-l5 one">The password must include at least one lowercase letter</p>
+                        <p class="text-demi-s16-h20-l5 two">The password must include at least one capital letter</p>
+                        <p class="text-demi-s16-h20-l5 three">The password must include at least one circe</p>
+                        <p class="text-demi-s16-h20-l5 four">The password must include at least one special character</p>
+                        <p class="text-demi-s16-h20-l5 five">The password must contain 8-20 characters</p>
+                        <p class="text-demi-s16-h20-l5 six">The password should not be among the top 100 passwords of 2023</p>
+                        <p class="text-medium-14-l5 generate" id="passwordGenerate">generate</p>
+                        <img class="hide" src="../../assets/icons/hide.svg" alt="" id="showHide">
                     </div>
                     <div class="form" id="repeatThePassword">
                         <input type="text" placeholder="repeat the password">

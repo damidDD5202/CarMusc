@@ -91,3 +91,15 @@ button >span{
 button:hover >span{
     width: 100%;
 }
+
+@media(max-width: 1039px){
+    .authorization{
+        padding: 90px 0;
+    }
+}
+
+@media(max-width: 539px){
+    .authorization{
+        padding: 60px 0;
+    }
+}

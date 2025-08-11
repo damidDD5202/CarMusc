@@ -20,6 +20,8 @@
     position: relative;
     margin-bottom: 0px;
     transition: all 0.3s ease-out;
+    background-color: var(--background);
+    z-index: 100;
 }
 
 .form >input{
@@ -39,11 +41,11 @@
     margin: 0;
 }
 
-.form.error{
+.form.error, .form.generate{
     margin-bottom: 40px;
 }
 
-.form.error:nth-of-type(1), .form.error:nth-of-type(2), .form.error:nth-of-type(4){
+.form.error:nth-of-type(1), .form.error:nth-of-type(2), .form.error:nth-of-type(4), .form.error.five{
     margin-bottom: 20px;
 }
 
@@ -51,10 +53,65 @@
     background-color: var(--help-20);
 }
 
-.form.error >p{
+.form.error >p:nth-of-type(1){
     top: 56px;
 }
 
+.generate{
+    cursor: pointer;
+    user-select: none;
+}
+
+.generateError{
+    display: none;
+
+}
+
+.form.generate >p.generateError{
+    top: 56px;
+    display: flex;
+}
+
+
+/* 1 - 6 password */
+p.one, p.two, p.three, p.four, p.five, p.six{
+    display: none;
+}
+
+.form.error.one >p.one, .form.error.two >p.two, .form.error.three >p.three, .form.error.four >p.four, .form.error.five >p.five, .form.error.six >p.six{
+    display: flex;
+    top: 56px;
+}
+
+
+
+#passwordGenerate, #loginGenerate{
+    position: absolute;
+    z-index: 100;
+    top: 16px;
+    left: 233px;
+    text-transform: uppercase;
+    color: var(--text-color-60);
+    width: fit-content;
+}
+
+#login >input{
+    padding-right: 72px;
+}
+
+#password >input{
+    padding-right: 103px;
+}
+
+.hide{
+    position: absolute;
+    z-index: 100;
+    top: 15px;
+    left: 187px;
+    padding-left: 15px;
+    height: 15px;
+    width: 15px;
+}
 
 /*---- checkbox ----*/
 
@@ -125,4 +182,16 @@ button >span{
 
 button:hover >span{
     width: 100%;
+}
+
+@media(max-width: 1039px){
+    .registration{
+        padding: 90px 0;
+    }
+}
+
+@media(max-width: 539px){
+    .registration{
+        padding: 60px 0;
+    }
 }

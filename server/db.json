@@ -23,6 +23,16 @@
       "telephone": "+375 (33) 234-51-55",
       "email": "user@gmail.com",
       "date of birth": "22.04.2004"
+    },
+    {
+      "id": 3,
+      "password": "123Ad-123",
+      "name": "dfg",
+      "surname": "dfg",
+      "telephone": "+375 (33) 613-76-41",
+      "email": "asdsad@gmail.com",
+      "date of birth": "22.05.2005",
+      "repeatThePassword": "123Ad-123"
     }
   ],
   "carts": [
@@ -59,6 +69,11 @@
           "dateDone": "11.08.2025 10:26"
         }
       ]
+    },
+    {
+      "id": 3,
+      "ordered": [],
+      "completed": []
     }
   ],
   "services": {

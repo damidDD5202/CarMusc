@@ -85,6 +85,16 @@
     margin: 0;
 }
 
+.text-medium-14-l5{
+    font-family: 'GroteskMedium', sans;
+    font-size: 0.875em;
+    line-height: 1;
+    text-decoration: none;
+    letter-spacing: 0.05em; /*5%*/
+    color: var(--text-color, #fff); 
+    margin: 0;
+}
+
 
 /*---   demi    ---*/
 
