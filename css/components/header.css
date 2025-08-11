@@ -49,6 +49,12 @@ nav a:nth-of-type(1) span, .nav >a:nth-of-type(1) >span{
 nav >button{
     all: unset;
     margin-left: auto !important;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+nav >button:hover{
+    color: var(--help) !important;
 }
 
 .burger-menu{

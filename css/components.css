@@ -18,3 +18,11 @@
 .half:hover span{
     width: 100%;
 }
+
+.setBut{
+    transition: all 0.3s ease-out;
+}
+
+.setBut:hover{
+    color: var(--help);
+}

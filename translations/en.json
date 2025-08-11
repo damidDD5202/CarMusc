@@ -31,7 +31,8 @@
                 "moreDetailed": "More detailed",
                 "performService": "Perform a service",
                 "deleteQuestion": "Delete question",
-                "addAnswer": "Add answer"
+                "addAnswer": "Add answer",
+                "setting": "Setting"
             },
             "description":{
                 "logInPost": "Log in to post a question",
@@ -40,7 +41,11 @@
                 "needAuth": "To order a service, you must be logged in!\n\nprofile --> sign in\\up",
                 "cancelService":"Do you really want to cancel the service?",
                 "moveDone":"Move the service to done?",
-                "deleteQuestion": "Do you really want to delete the question?"
+                "deleteQuestion": "Do you really want to delete the question?",
+                "wantCustomize": "If you want to customize the page",
+                "wantAuth": "If you want to log in to another account",
+                "wantRed": "If you want to create a new account",
+                "wantLogOut": "If you want to log out of your account"
             },
             "func":{
                 "confirm": "Confirm"
@@ -48,6 +53,12 @@
             "placeholder":{
                 "price": "price",
                 "answer": "answer"
+            },
+            "link":{
+                "authorization" : "Authorization",
+                "registration" : "Registration",
+                "setting" : "Setting",
+                "logOut": "Log out"
             }
         },
         "services":{
