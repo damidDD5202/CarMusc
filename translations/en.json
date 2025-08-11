@@ -286,6 +286,11 @@
             "button":{
                 "change": "Change",
                 "reset": "Reset"
+            },
+            "palette":{
+                "default": "default",
+                "option1": "option 1",
+                "option2": "option 2"
             }
         }
     },
