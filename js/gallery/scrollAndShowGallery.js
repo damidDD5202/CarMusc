@@ -5,16 +5,16 @@ const gallery = document.querySelector('.gallery');
 
 const images = {
     0: [
-        '../../assets/images/gallery11.svg',
-        '../../assets/images/gc2.svg',
-        '../../assets/images/gallery12.svg',
-        '../../assets/images/gc4.svg',
+        '../../assets/images/gallery11.jpg',
+        '../../assets/images/gc2.jpg',
+        '../../assets/images/gallery12.jpg',
+        '../../assets/images/gc4.jpg',
     ],
     1: [
-        '../../assets/images/tempgallery111.svg',
-        '../../assets/images/gallery22.svg',
-        '../../assets/images/gc3.svg',
-        '../../assets/images/gallery21.svg',
+        '../../assets/images/tempgallery111.jpg',
+        '../../assets/images/gallery22.jpg',
+        '../../assets/images/gc3.jpg',
+        '../../assets/images/gallery21.jpg',
     ]
 }
 

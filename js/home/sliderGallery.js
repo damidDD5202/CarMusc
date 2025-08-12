@@ -2,27 +2,27 @@ import i18n from '../i18n.js';
 
 const gallery = [
     {
-        image: './assets/images/gc1.svg',
+        image: './assets/images/gc1.jpg',
         text: 'Look at this amazing tandem! Bright colors and stylish rims make these cars True parking',
     },
     {
-        image: './assets/images/gc2.svg',
+        image: './assets/images/gc2.jpg',
         text: 'Our detailing services will give your car a new look, emphasizing its style and individuality',
     },
     {
-        image: './assets/images/gc3.svg',
+        image: './assets/images/gc3.jpg',
         text: 'This style not only attracts attention, but also emphasizes the owner\'s individualit',
     },
     {
-        image: './assets/images/gc4.svg',
+        image: './assets/images/gc4.jpg',
         text: 'High-quality paintwork and details give it an aggressive and dynamic appearance',
     },
     {
-        image: './assets/images/gc5.svg',
+        image: './assets/images/gc5.jpg',
         text: 'At night, our lighting solutions emphasize its lines and powerful character',
     },
     {
-        image: './assets/images/gc6.svg',
+        image: './assets/images/gc6.jpg',
         text: 'Every detail of the car shines, because we take care of the car so that it looks great!',
     },
 ]
