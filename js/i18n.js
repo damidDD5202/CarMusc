@@ -8,7 +8,7 @@ let languageChanged = false;
 
 async function loadTranslations(lang = currentLanguage) {
     try {
-        const response = await fetch(`/translations/${lang}.json`);
+        const response = await fetch(`./translations/${lang}.json`);
         if (!response.ok) throw new Error('Failed to load translations');
         
         translations = await response.json();
