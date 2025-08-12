@@ -134,6 +134,7 @@ if (language) {
 
 const palette = document.querySelector('#palette');
 const options = document.querySelectorAll('#palette .option');
+const selectPalette = palette.getElementsByClassName('text-demi-s16-l5')[0];
 
 if (palette) {
     options.forEach(option => {
@@ -148,7 +149,11 @@ if (palette) {
 export function applyPalette(palette) {
     // Сохраняем в localStorage
     localStorage.setItem('palette', palette);
-    
+
+    selectPalette.textContent = palette;
+    selectPalette.className = 'text-demi-s16-l5 option-select'
+    selectPalette.setAttribute('data-i18', `personal.palette.${palette}`);
+
     // Применяем палитру к документу
     document.documentElement.setAttribute('data-palette', palette);
     
@@ -163,15 +168,18 @@ export function updatePaletteStyles(palette) {
     if (isLightTheme) {
         switch (palette) {
             case 'default':
+                document.documentElement.style.setProperty('--background', '#e2d3d3ff');
                 document.documentElement.style.setProperty('--help', '#BE2B31');
-                document.documentElement.style.setProperty('--text-color', '#141414');
+                document.documentElement.style.setProperty('--text-color', '#141414eb');
                 break;
             case 'alternative1':
-                document.documentElement.style.setProperty('--help', '#89aa26ff');
-                document.documentElement.style.setProperty('--text-color', '#333333');
+                document.documentElement.style.setProperty('--background', '#e2d3d3ff');
+                document.documentElement.style.setProperty('--help', '#5d7f80a1');
+                document.documentElement.style.setProperty('--text-color', '#141414eb');
                 break;
             case 'alternative2':
-                document.documentElement.style.setProperty('--help', '#4a89dc');
+                document.documentElement.style.setProperty('--background', '#cfd1beff');
+                document.documentElement.style.setProperty('--help', '#76a45bff');
                 document.documentElement.style.setProperty('--text-color', '#222222');
                 break;
             default:
@@ -181,15 +189,18 @@ export function updatePaletteStyles(palette) {
         // Темная тема
         switch (palette) {
             case 'default':
+                document.documentElement.style.setProperty('--background', '#141414');
                 document.documentElement.style.setProperty('--help', '#BE2B31');
                 document.documentElement.style.setProperty('--text-color', '#ffffff');
                 break;
             case 'alternative1':
-                document.documentElement.style.setProperty('--help', '#bababa');
-                document.documentElement.style.setProperty('--text-color', '#e0e0e0');
+                document.documentElement.style.setProperty('--background', '#141414');
+                document.documentElement.style.setProperty('--help', '#9c9867ff');
+                document.documentElement.style.setProperty('--text-color', '#ffffffff');
                 break;
             case 'alternative2':
-                document.documentElement.style.setProperty('--help', '#69717aff');
+                document.documentElement.style.setProperty('--background', '#404040ff');
+                document.documentElement.style.setProperty('--help', '#4a5057ff');
                 document.documentElement.style.setProperty('--text-color', '#f5f5f5');
                 break;
             default:

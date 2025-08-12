@@ -117,7 +117,7 @@
         "id": "5",
         "image": "cleaning",
         "name": "painting discs",
-        "price": "31",
+        "price": 31,
         "description": "We offer painting of both steel and alloy wheels using special paints that provide protection against corrosion and mechanical damage"
       },
       {

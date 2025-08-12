@@ -21,7 +21,7 @@ export const updatePassword = async (userId, newPassword) => {
         body: JSON.stringify({ password: newPassword }),
         redirect: 'manual'
     });
-
+    
     if (!response.ok) {
         throw new Error('Ошибка при обновлении пароля');
     }

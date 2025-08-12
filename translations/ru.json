@@ -316,8 +316,8 @@
             },
             "palette":{
                 "default": "стандарт",
-                "option1": "вариант 1",
-                "option2": "вариант 2"
+                "alternative1": "вариант 1",
+                "alternative2": "вариант 2"
             }
         }
     },

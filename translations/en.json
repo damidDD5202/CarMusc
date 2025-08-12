@@ -309,8 +309,8 @@
             },
             "palette":{
                 "default": "default",
-                "option1": "option 1",
-                "option2": "option 2"
+                "alternative1": "option 1",
+                "alternative2": "option 2"
             }
         }
     },

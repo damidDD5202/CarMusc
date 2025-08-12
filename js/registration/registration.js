@@ -105,7 +105,9 @@ const commonPasswords = [
     "232323"
 ];
 
-const userData = {};
+const userData = {
+    role: 'user'
+};
 
 let users;
 let login;
