@@ -201,11 +201,11 @@ function moveSelectButton(){
     addOrShowCards();
 }
 
-function changePositionAndSize(){
+export function changePositionAndSize(){
     let newPositionLeft = 0;
     let newPositionTop = 0;
     let newWidth = 0;
-    
+
     if(lang == 'en'){
         newWidth = select == 'ordered' ? 178 : 208;
 

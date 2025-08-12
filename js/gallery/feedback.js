@@ -173,8 +173,6 @@ function addOrShowCards(){
         }
     }
 
-    console.log(cards)
-
 
     for(let i = 0; i < countCard; i++){
         if(countCard == 3 && i == 1 || countCard == 2 && i == 1 || countCard == 1 && i == 0){

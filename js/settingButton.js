@@ -20,19 +20,19 @@ function createContentForModal(){
     });
 
     const setting = createButton('If you want to customize the page', 'wantCustomize','Setting', 'setting',
-        window.location.href.includes('/index.html') ? './pages/profile/profile.html#settingBox' : '../../pages/profile/profile.html#settingBox'
+        window.location.href.includes('/index.html') || window.location.href.endsWith('/') ? './pages/profile/profile.html#settingBox' : '../../pages/profile/profile.html#settingBox'
     );
     const auth = createButton('If you want to log in to another account', 'wantAuth', 'Authorization', 'authorization',
-        window.location.href.includes('/index.html') ? './pages/authorization/authorization.html' : '../../pages/authorization/authorization.html'
+        window.location.href.includes('/index.html') || window.location.href.endsWith('/') ? './pages/authorization/authorization.html' : '../../pages/authorization/authorization.html'
     );
     const reg = createButton('If you want to create a new account', 'wantRed', 'Registration', 'registration',
-        window.location.href.includes('/index.html') ? './pages/registration/registration.html' : '../../pages/registration/registration.html'
+        window.location.href.includes('/index.html') || window.location.href.endsWith('/') ? './pages/registration/registration.html' : '../../pages/registration/registration.html'
     );
 
     let logOut;
     if (user) {
         logOut = createButton('If you want to log out of your account', 'wantLogOut', 'Log out', 'logOut',
-            window.location.href.includes('/index.html') ? './pages/registration/registration.html' : '../../pages/registration/registration.html',
+            window.location.href.includes('/index.html') || window.location.href.endsWith('/') ? './pages/authorization/authorization.html' : '../../pages/authorization/authorization.html',
             true
         );
     }

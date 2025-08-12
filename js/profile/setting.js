@@ -1,4 +1,5 @@
 import i18n from "../i18n.js";
+import { changePositionAndSize } from "./filterServices.js";
 
 
 /* ----------- reset ----------- */
@@ -117,6 +118,8 @@ if (language) {
                     if (window.addOrShowCards) {
                         window.addOrShowCards();
                     }
+
+
                 } catch (error) {
                     console.error('Language change failed:', error);
                     // Возвращаем предыдущее значение

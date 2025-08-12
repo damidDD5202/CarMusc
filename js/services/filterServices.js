@@ -280,10 +280,15 @@ function createCard(service, i){
 
                 async function myUpdate(){
                     try{
+
+                        if(!isValidPrice(inputPrice.value)){
+                            throw new Error('Это не число');
+                        }
+
                         updateServicePrice(service.id, inputPrice.value);
                         window.location.reload();
                     }catch(error){
-                        console.log(error);
+                        alert(lang == 'en' ? 'The entered value is not a number (character to 1 from 10.000)' : "Введенное значение не является числом (значение от 1 до 10.000)")
                     }
                 }
 
@@ -315,6 +320,12 @@ function createCard(service, i){
     });
 
     return container;
+}
+
+function isValidPrice(value) {
+    const number = parseFloat(value); 
+
+    return !isNaN(number) && number > 0 && number < 10000;
 }
 
 function addOrShowCards() {
