@@ -60,18 +60,51 @@
       "login": "12345",
       "password": "1qQ!8888",
       "repeatThePassword": "1qQ!8888"
+    },
+    {
+      "id": "6",
+      "role": "user",
+      "name": "Vasya",
+      "surname": "Vicha",
+      "patronymic": "Mikalaev",
+      "telephone": "+375 (98) 765-48-76",
+      "email": "qwerty@gmail.com",
+      "date of birth": "20.12.2004",
+      "login": "vasya",
+      "password": "1qQ!8888",
+      "repeatThePassword": "1qQ!8888"
+    },
+    {
+      "id": "7",
+      "role": "user",
+      "name": "432",
+      "surname": "543",
+      "patronymic": "543",
+      "telephone": "+375 (55) 555-55-55",
+      "email": "5345@gmail.com",
+      "date of birth": "12.12.2002",
+      "login": "qwerty",
+      "password": "1qQ!8888",
+      "repeatThePassword": "1qQ!8888"
+    },
+    {
+      "id": "8",
+      "role": "user",
+      "name": "qwe",
+      "surname": "qwe",
+      "patronymic": "qwe",
+      "telephone": "+375 (09) 876-54-32",
+      "email": "qwe@gmail.com",
+      "date of birth": "23.03.2003",
+      "login": "qwert",
+      "password": "1qQ!8888",
+      "repeatThePassword": "1qQ!8888"
     }
   ],
   "carts": [
     {
       "id": "2",
-      "ordered": [
-        {
-          "id": "2",
-          "dateOrdered": "11.08.2025 10:25",
-          "oldPrice": 15
-        }
-      ],
+      "ordered": [],
       "completed": [
         {
           "id": "1",
@@ -94,6 +127,12 @@
           "dateOrdered": "11.08.2025 10:25",
           "oldPrice": "11",
           "dateDone": "11.08.2025 10:26"
+        },
+        {
+          "id": "2",
+          "dateOrdered": "11.08.2025 10:25",
+          "oldPrice": 15,
+          "dateDone": "13.08.2025 12:22"
         }
       ]
     },
@@ -122,6 +161,39 @@
     {
       "id": "5",
       "ordered": [],
+      "completed": []
+    },
+    {
+      "id": "6",
+      "ordered": [],
+      "completed": [
+        {
+          "id": "10",
+          "dateOrdered": "13.08.2025 12:22",
+          "oldPrice": 15,
+          "dateDone": "13.08.2025 12:23"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "ordered": [],
+      "completed": []
+    },
+    {
+      "id": "8",
+      "ordered": [
+        {
+          "id": "3",
+          "dateOrdered": "13.08.2025 11:54",
+          "oldPrice": 20
+        },
+        {
+          "id": "1",
+          "dateOrdered": "13.08.2025 11:55",
+          "oldPrice": "13"
+        }
+      ],
       "completed": []
     }
   ],

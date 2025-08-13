@@ -1,1 +1,1 @@
-# Ссылка на [макеты в Figma](https://www.figma.com/design/CXgBS8d3ndeALoAEWrAgvW/Car-musc?m=auto&t=u224zra00hw2hHUz-1)
+# Ссылка на [макеты в Figma](https://www.figma.com/design/slOn5iRKaraZJkgBb18NHC/Car-musc?m=auto&t=pD2too3e3Eg9I7Oc-1)
