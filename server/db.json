@@ -34,6 +34,32 @@
       "email": "asdsad@gmail.com",
       "date of birth": "22.05.2005",
       "repeatThePassword": "123Ad-123"
+    },
+    {
+      "id": "4",
+      "role": "user",
+      "name": "Dima",
+      "surname": "Firmov",
+      "patronymic": "Ivanovich",
+      "telephone": "+375 (29) 452-55-55",
+      "email": "wer@gmai.com",
+      "date of birth": "22.05.2005",
+      "login": "dima123",
+      "password": "Dima_123",
+      "repeatThePassword": "Dima_123"
+    },
+    {
+      "id": "5",
+      "role": "user",
+      "name": "123",
+      "surname": "123",
+      "patronymic": "123",
+      "telephone": "+375 (44) 444-44-44",
+      "email": "123@gmail.com",
+      "date of birth": "12.12.2005",
+      "login": "12345",
+      "password": "1qQ!8888",
+      "repeatThePassword": "1qQ!8888"
     }
   ],
   "carts": [
@@ -80,6 +106,22 @@
           "oldPrice": 20
         }
       ],
+      "completed": []
+    },
+    {
+      "id": "4",
+      "ordered": [
+        {
+          "id": "1",
+          "dateOrdered": "13.08.2025 11:39",
+          "oldPrice": "13"
+        }
+      ],
+      "completed": []
+    },
+    {
+      "id": "5",
+      "ordered": [],
       "completed": []
     }
   ],
@@ -176,13 +218,13 @@
   "questions": [
     {
       "id": "6340",
-      "question": "sdfsdfsdfdsfsdfsdf",
-      "answer": "dsfsdfsdfsdfdsf"
+      "question": "What are the main steps involved in the car detailing process, and how do they affect the overall appearance and condition of the car?",
+      "answer": "The car detailing process includes several key stages, each of which plays an important role in restoring and maintaining the appearance and condition of the car."
     },
     {
       "id": "13de",
-      "question": "arfagergfgragsaersgf",
-      "answer": "Some answer"
+      "question": "How often is it recommended to detail a car to keep it in perfect condition, and what factors can affect the frequency of these procedures?",
+      "answer": "It is recommended to perform car detailing every 3-6 months, depending on the vehicle's usage and condition. Factors that may affect the frequency of detailing"
     },
     {
       "id": "6614",

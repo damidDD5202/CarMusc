@@ -466,7 +466,7 @@ regButton.addEventListener('click', async function(event){
         console.log('есть ошибки и незаполненные поля'); // модальное окно
     }else{
         try {
-            userData.id = await maxIndex() + 1;
+            userData.id = (await maxIndex() + 1).toString();
 
             await addUser(userData);
 
