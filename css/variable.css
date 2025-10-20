@@ -1,5 +1,8 @@
 :root{
     --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 20px;
+    --font-size-extra-large: 24px;
 
     --background: #141414;
     --text-background: #FFFFFF;
@@ -17,8 +20,49 @@
     --hedaer-index: #FFFFFF;
 }
 
+/* Accessibility settings */
+[data-accessibility="enabled"] {
+    --font-size-base: 20px;
+    --font-size-small: 18px;
+    --font-size-large: 24px;
+    --font-size-extra-large: 28px;
+}
+
+[data-accessibility="enabled"][data-font-size="small"] {
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-large: 16px;
+    --font-size-extra-large: 18px;
+}
+
+[data-accessibility="enabled"][data-font-size="large"] {
+    --font-size-base: 24px;
+    --font-size-small: 20px;
+    --font-size-large: 28px;
+    --font-size-extra-large: 32px;
+}
+
+[data-accessibility="enabled"][data-font-size="extra-large"] {
+    --font-size-base: 28px;
+    --font-size-small: 24px;
+    --font-size-large: 32px;
+    --font-size-extra-large: 36px;
+}
+
+[data-images-disabled="true"] img {
+    display: none !important;
+}
+
+[data-images-disabled="true"] .gallery-container,
+[data-images-disabled="true"] .our-work-box {
+    display: none !important;
+}
+
 [data-theme="light"] {
     --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 20px;
+    --font-size-extra-large: 24px;
 
     --background: #f2c2c2; 
     --text-background: #141414; 
@@ -33,4 +77,42 @@
     --help-white: #141414;
 
     --hedaer-index: #FFFFFF;
+}
+
+/* Accessibility settings */
+[data-accessibility="enabled"] {
+    --font-size-base: 20px;
+    --font-size-small: 18px;
+    --font-size-large: 24px;
+    --font-size-extra-large: 28px;
+}
+
+[data-accessibility="enabled"][data-font-size="small"] {
+    --font-size-base: 14px;
+    --font-size-small: 12px;
+    --font-size-large: 16px;
+    --font-size-extra-large: 18px;
+}
+
+[data-accessibility="enabled"][data-font-size="large"] {
+    --font-size-base: 24px;
+    --font-size-small: 20px;
+    --font-size-large: 28px;
+    --font-size-extra-large: 32px;
+}
+
+[data-accessibility="enabled"][data-font-size="extra-large"] {
+    --font-size-base: 28px;
+    --font-size-small: 24px;
+    --font-size-large: 32px;
+    --font-size-extra-large: 36px;
+}
+
+[data-images-disabled="true"] img {
+    display: none !important;
+}
+
+[data-images-disabled="true"] .gallery-container,
+[data-images-disabled="true"] .our-work-box {
+    display: none !important;
 }

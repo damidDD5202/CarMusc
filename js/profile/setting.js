@@ -81,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     setupThemeSwitcher();
     initPalette();
+    initAccessibility();
 });
 
 
@@ -215,4 +216,66 @@ export function updatePaletteStyles(palette) {
 export function initPalette() {
     const currentPalette = localStorage.getItem('palette') || 'default';
     applyPalette(currentPalette);
+}
+
+/* ------- Accessibility Settings ----------*/
+import { accessibilityManager } from '../accessibility.js';
+
+// Инициализация настроек доступности
+export function initAccessibility() {
+    // Версия для слабовидящих
+    const visuallyImpairedCheckbox = document.querySelector('.personal-container-setting:first-child input[type="checkbox"]');
+    if (visuallyImpairedCheckbox) {
+        const settings = accessibilityManager.getSettings();
+        visuallyImpairedCheckbox.checked = settings.visuallyImpaired;
+        
+        visuallyImpairedCheckbox.addEventListener('change', function() {
+            accessibilityManager.setVisuallyImpaired(this.checked);
+            
+            // Активируем/деактивируем другие настройки
+            const otherSettings = document.querySelectorAll('.no-active');
+            otherSettings.forEach(setting => {
+                if (this.checked) {
+                    setting.classList.remove('no-active');
+                    const checkboxes = setting.querySelectorAll('input[type="checkbox"]');
+                    checkboxes.forEach(cb => cb.disabled = false);
+                } else {
+                    setting.classList.add('no-active');
+                    const checkboxes = setting.querySelectorAll('input[type="checkbox"]');
+                    checkboxes.forEach(cb => cb.disabled = true);
+                }
+            });
+        });
+    }
+
+    // Размер шрифта
+    const fontSizeCheckboxes = document.querySelectorAll('.settin-size input[type="checkbox"]');
+    fontSizeCheckboxes.forEach((checkbox, index) => {
+        const settings = accessibilityManager.getSettings();
+        const sizes = ['small', 'medium', 'large'];
+        if (settings.fontSize === sizes[index]) {
+            checkbox.checked = true;
+        }
+
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                fontSizeCheckboxes.forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+                const sizes = ['small', 'medium', 'large'];
+                accessibilityManager.setFontSize(sizes[index]);
+            }
+        });
+    });
+
+    // Отключение изображений
+    const imagesCheckbox = document.querySelector('.personal-container-setting.no-active input[type="checkbox"]');
+    if (imagesCheckbox) {
+        const settings = accessibilityManager.getSettings();
+        imagesCheckbox.checked = settings.imagesDisabled;
+        
+        imagesCheckbox.addEventListener('change', function() {
+            accessibilityManager.setImagesDisabled(this.checked);
+        });
+    }
 }
